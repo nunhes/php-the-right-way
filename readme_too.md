@@ -1,20 +1,10 @@
-Vexo que queres traducir o proxecto "PHP: The Right Way" ao galego! Este é un proxecto moi importante para a comunidade PHP que proporciona boas prácticas e información de calidade para desenvolvedores PHP.
+Vou a traducir o proxecto "PHP: The Right Way" ao galego! Este é un proxecto moi importante para a comunidade PHP que proporciona boas prácticas e información de calidade para desenvolvedores PHP.
 
-Vou explorar a estrutura do proxecto para entender mellor como está organizado e como poderías contribuír coa tradución ao galego.
-
-Ran tool
-Ran tool
-Read file: CONTRIBUTING.md
-Read file: _config.yml
-Read file: _posts/01-01-01-Getting-Started.md
-Read file: _posts/01-02-01-Use-the-Current-Stable-Version.md
-Perfecto! Agora entendo a estrutura do proxecto. "PHP: The Right Way" é unha guía completa de boas prácticas para PHP que está organizada como un sitio web Jekyll. Vou explicarte como poderías contribuír coa tradución ao galego:
-
-## Estrutura do Proxecto
+## Estrutura do proxecto
 
 O proxecto está organizado da seguinte maneira:
 
-1. **Contido principal**: Os artigos están en `_posts/` con nomes como `01-02-01-Use-the-Current-Stable-Version.md`
+1. **Contido principal**: Os artigos están no cartafol `_posts/` con nomes como `01-02-01-Use-the-Current-Stable-Version.md`
 2. **Configuración**: `_config.yml` define a configuración do sitio
 3. **Navegación**: A estrutura de navegación xérase automaticamente baseada nos arquivos de `_posts/`
 
