@@ -3,13 +3,13 @@ isChild: true
 anchor:  basic_concept
 ---
 
-## Basic Concept {#basic_concept_title}
+## Concepto Básico {#basic_concept_title}
 
-We can demonstrate the concept with a simple, yet naive example.
+Podemos demostrar o concepto cun exemplo simple, pero inxenuo.
 
-Here we have a `Database` class that requires an adapter to speak to the database. We instantiate the adapter in the
-constructor and create a hard dependency. This makes testing difficult and means the `Database` class is very tightly
-coupled to the adapter.
+Aquí temos unha clase `Database` que require un adaptador para falar coa base de datos. Instanciamos o adaptador no
+construtor e creamos unha dependencia dura. Isto fai que as probas sexan difíciles e significa que a clase `Database` está moi estreitamente
+acoplada ao adaptador.
 
 {% highlight php %}
 <?php
@@ -28,8 +28,8 @@ class Database
 class MysqlAdapter {}
 {% endhighlight %}
 
-This code can be refactored to use Dependency Injection and therefore loosen the dependency.
-Here, we inject the dependency in a constructor and use the [constructor property promotion][php-constructor-promotion] so it is available as a property across the class:
+Este código pode ser refactorizado para usar Inxección de Dependencias e polo tanto soltar a dependencia.
+Aquí, inxectamos a dependencia nun construtor e usamos a [promoción de propiedades do construtor][php-constructor-promotion] para que estea dispoñible como unha propiedade a través da clase:
 
 {% highlight php %}
 <?php
@@ -45,8 +45,8 @@ class Database
 class MysqlAdapter {}
 {% endhighlight %}
 
-Now we are giving the `Database` class its dependency rather than creating it itself. We could even create a method
-that would accept an argument of the dependency and set it that way, or if the `$adapter` property was `public` we
-could set it directly.
+Agora estamos dando á clase `Database` a súa dependencia en lugar de creala ela mesma. Poderíamos mesmo crear un método
+que aceptase un argumento da dependencia e a configurase dese xeito, ou se a propiedade `$adapter` fose `public` poderíamos
+configurala directamente.
 
 [php-constructor-promotion]: https://www.php.net/manual/en/language.oop5.decon.php#language.oop5.decon.constructor.promotion

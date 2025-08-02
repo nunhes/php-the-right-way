@@ -3,45 +3,45 @@ isChild: true
 anchor:  password_hashing
 ---
 
-## Password Hashing {#password_hashing_title}
+## Hash de Contrasinais {#password_hashing_title}
 
-Eventually everyone builds a PHP application that relies on user login. Usernames and passwords are stored in a
-database and later used to authenticate users upon login.
+Eventualmente todos constrúen unha aplicación PHP que depende do login de usuario. Os nomes de usuario e contrasinais son almacenados nunha
+base de datos e máis tarde usados para autenticar usuarios ao facer login.
 
-It is important that you properly [_hash_][3] passwords before storing them. Hashing and encrypting are [two very different things][7]
-that often get confused.
+É importante que [_haxees_][3] correctamente os contrasinais antes de almacenalos. Haxear e encriptar son [dúas cousas moi diferentes][7]
+que a miúdo se confunden.
 
-Hashing is an irreversible, one-way function. This produces a fixed-length string that cannot be feasibly reversed.
-This means you can compare a hash against another to determine if they both came from the same source string, but you
-cannot determine the original string. If passwords are not hashed and your database is accessed by an unauthorized
-third-party, all user accounts are now compromised.
+Haxear é unha función irreversible e unidireccional. Isto produce unha cadea de lonxitude fixa que non pode ser factiblemente revertida.
+Isto significa que podes comparar un hash contra outro para determinar se ambos veñen da mesma cadea fonte, pero non
+podes determinar a cadea orixinal. Se os contrasinais non están haxeados e a túa base de datos é accedida por un terceiro
+non autorizado, todas as contas de usuario están agora comprometidas.
 
-Unlike hashing, encryption is reversible (provided you have the key). Encryption is useful in other areas, but is a poor
-strategy for securely storing passwords.
+A diferenza do haxear, a encriptación é reversible (sempre que teñas a chave). A encriptación é útil noutras áreas, pero é unha pobre
+estratexia para almacenar contrasinais de forma segura.
 
-Passwords should also be individually [_salted_][5] by adding a random string to each password before hashing. This prevents dictionary attacks and the use of "rainbow tables" (a reverse list of cryptographic hashes for common passwords.)
+Os contrasinais tamén deberían ser individualmente [_salados_][5] engadindo unha cadea aleatoria a cada contrasinal antes de haxear. Isto prevén ataques de dicionario e o uso de "táboas arco da vella" (unha lista inversa de hashes criptográficos para contrasinais comúns).
 
-Hashing and salting are vital as often users use the same password for multiple services and password quality can be poor.
+Haxear e salar son vitais xa que a miúdo os usuarios usan o mesmo contrasinal para múltiples servizos e a calidade do contrasinal pode ser pobre.
 
-Additionally, you should use [a specialized _password hashing_ algorithm][6] rather than fast, general-purpose
-cryptographic hash function (e.g. SHA256). The short list of acceptable password hashing algorithms (as of June 2018)
-to use are:
+Ademais, deberías usar [un algoritmo especializado de _hash de contrasinal_][6] en lugar dunha función de hash criptográfico rápida e de propósito xeral
+(ex. SHA256). A lista curta de algoritmos aceptábeis de hash de contrasinal (a partir de xuño de 2018)
+para usar son:
 
-* Argon2 (available in PHP 7.2 and newer)
+* Argon2 (dispoñíbel en PHP 7.2 e máis recente)
 * Scrypt
-* **Bcrypt** (PHP provides this one for you; see below)
-* PBKDF2 with HMAC-SHA256 or HMAC-SHA512
+* **Bcrypt** (PHP proporciona este para ti; vexa abaixo)
+* PBKDF2 con HMAC-SHA256 ou HMAC-SHA512
 
-Fortunately, nowadays PHP makes this easy.
+Afortunadamente, hoxe en día PHP fai isto fácil.
 
-**Hashing passwords with `password_hash`**
+**Haxear contrasinais con `password_hash`**
 
-In PHP 5.5 `password_hash()` was introduced. At this time it is using BCrypt, the strongest algorithm currently
-supported by PHP. It will be updated in the future to support more algorithms as needed though. The `password_compat`
-library was created to provide forward compatibility for PHP >= 5.3.7.
+En PHP 5.5 `password_hash()` foi introducido. Neste momento está usando BCrypt, o algoritmo máis forte actualmente
+soportado por PHP. Será actualizado no futuro para soportar máis algoritmos segundo sexa necesario. A biblioteca `password_compat`
+foi creada para proporcionar compatibilidade cara adiante para PHP >= 5.3.7.
 
-Below we hash a string, and then check the hash against a new string. Because our two source strings are different
-('secret-password' vs. 'bad-password') this login will fail.
+Abaixo haxeamos unha cadea, e entón verificamos o hash contra unha nova cadea. Porque as nosas dúas cadeas fonte son diferentes
+('secret-password' vs. 'bad-password') este login fallará.
 
 {% highlight php %}
 <?php
@@ -50,19 +50,19 @@ require 'password.php';
 $passwordHash = password_hash('secret-password', PASSWORD_DEFAULT);
 
 if (password_verify('bad-password', $passwordHash)) {
-    // Correct Password
+    // Contrasinal Correcto
 } else {
-    // Wrong password
+    // Contrasinal incorrecto
 }
 {% endhighlight %}
 
-`password_hash()` takes care of password salting for you. The salt is stored, along with the algorithm and "cost", as part of the hash.  `password_verify()` extracts this to determine how to check the password, so you don't need a separate database field to store your salts.
+`password_hash()` coida do salado de contrasinais para ti. O sal está almacenado, xunto co algoritmo e "custo", como parte do hash. `password_verify()` extrae isto para determinar como verificar o contrasinal, polo que non necesitas un campo separado de base de datos para almacenar os teus sales.
 
-* [Learn about `password_hash()`] [1]
-* [`password_compat` for PHP >= 5.3.7 && < 5.5] [2]
-* [Learn about hashing in regards to cryptography] [3]
-* [Learn about salts] [5]
-* [PHP `password_hash()` RFC] [4]
+* [Aprender sobre `password_hash()`] [1]
+* [`password_compat` para PHP >= 5.3.7 && < 5.5] [2]
+* [Aprender sobre haxear en relación á criptografía] [3]
+* [Aprender sobre sales] [5]
+* [RFC de PHP `password_hash()`] [4]
 
 
 [1]: https://www.php.net/function.password-hash

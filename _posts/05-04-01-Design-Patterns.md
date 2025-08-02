@@ -3,18 +3,18 @@ isChild: true
 anchor:  design_patterns
 ---
 
-## Design Patterns {#design_patterns_title}
+## Patróns de Deseño {#design_patterns_title}
 
-When you are building your application it is helpful to use common patterns in your code and common patterns for the
-overall structure of your project. Using common patterns is helpful because it makes it much easier to manage your code
-and lets other developers quickly understand how everything fits together.
+Cando estás construíndo a túa aplicación é útil usar patróns comúns no teu código e patróns comúns para a
+estrutura xeral do teu proxecto. Usar patróns comúns é útil porque fai moito máis fácil xestionar o teu código
+e permite que outros desenvolvedores enteñan rapidamente como todo se encaixa xuntos.
 
-If you use a framework then most of the higher level code and project structure will be based on that framework, so a
-lot of the pattern decisions are made for you. But it is still up to you to pick out the best patterns to follow in the
-code you build on top of the framework. If, on the other hand, you are not using a framework to build your application
-then you have to find the patterns that best suit the type and size of application that you're building.
+Se usas un framework entón a maioría do código de alto nivel e estrutura do proxecto estarán baseados nese framework, polo que moitas
+das decisións de patróns están feitas para ti. Pero aínda depende de ti escoller os mellores patróns para seguir no
+código que constrúes sobre o framework. Se, por outra banda, non estás usando un framework para construír a túa aplicación
+entón tes que atopar os patróns que mellor se axusten ao tipo e tamaño de aplicación que estás construíndo.
 
-You can learn more about PHP design patterns and see working examples at:
+Podes aprender máis sobre patróns de deseño PHP e ver exemplos funcionais en:
 
 * <https://refactoring.guru/design-patterns/php>
-* [https://designpatternsphp.readthedocs.io/](https://designpatternsphp.readthedocs.io/en/latest/) ([PDF download](https://www.computer-pdf.com/web-programming/php/924-tutorial-designpatternsphp-documentation.html))
+* [https://designpatternsphp.readthedocs.io/](https://designpatternsphp.readthedocs.io/en/latest/) ([descarga PDF](https://www.computer-pdf.com/web-programming/php/924-tutorial-designpatternsphp-documentation.html))

@@ -3,20 +3,20 @@ isChild: true
 anchor:  complementary_testing_tools
 ---
 
-## Complementary Testing Tools {#complementary_testing_tools_title}
+## Ferramentas de Proba Complementarias {#complementary_testing_tools_title}
 
-Besides individual testing and behavior driven frameworks, there are also a number of generic frameworks and helper
-libraries useful for any preferred approach taken.
+Ademais dos frameworks individuais de proba e comportamento dirixido, tamén hai un número de frameworks xenéricos e bibliotecas
+auxiliares útiles para calquera enfoque preferido tomado.
 
-### Tool Links
+### Enlaces de Ferramentas
 
-* [Selenium] is a browser automation tool which can be [integrated with PHPUnit]
-* [Mockery] is a Mock Object Framework which can be integrated with [PHPUnit] or [PHPSpec]
-* [Prophecy] is a highly opinionated yet very powerful and flexible PHP object mocking framework. It's integrated with
-[PHPSpec] and can be used with [PHPUnit].
-* [php-mock] is a library to help to mock PHP native functions.
-* [Infection] is a PHP implementation of [Mutation Testing] to help to measure the effectiveness of your tests.
-* [PHPUnit Polyfills] is a library that allows for creating PHPUnit cross-version compatible tests when a test suite needs to run against a range of PHPUnit versions.
+* [Selenium] é unha ferramenta de automatización de navegador que pode ser [integrada con PHPUnit]
+* [Mockery] é un Framework de Obxectos Mock que pode ser integrado con [PHPUnit] ou [PHPSpec]
+* [Prophecy] é un framework de mock de obxectos PHP moi opinado pero moi poderoso e flexible. Está integrado con
+[PHPSpec] e pode ser usado con [PHPUnit].
+* [php-mock] é unha biblioteca para axudar a mockear funcións nativas de PHP.
+* [Infection] é unha implementación PHP de [Proba de Mutación] para axudar a medir a efectividade das túas probas.
+* [PHPUnit Polyfills] é unha biblioteca que permite crear probas compatibles entre versións de PHPUnit cando unha suite de probas necesita executarse contra un rango de versións de PHPUnit.
 
 
 [Selenium]: https://www.selenium.dev/

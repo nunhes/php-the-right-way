@@ -3,21 +3,21 @@ isChild: true
 anchor:  opcode_cache
 ---
 
-## Opcode Cache {#opcode_cache_title}
+## Caché de Opcode {#opcode_cache_title}
 
-When a PHP file is executed, it must first be compiled into [opcodes](https://php-legacy-docs.zend.com/manual/php4/en/internals2.opcodes) (machine language instructions for the CPU). If the source code is unchanged, the opcodes will be the same, so this compilation step becomes a waste of CPU resources.
+Cando un arquivo PHP é executado, debe primeiro ser compilado en [opcodes](https://php-legacy-docs.zend.com/manual/php4/en/internals2.opcodes) (instrucións de linguaxe de máquina para a CPU). Se o código fonte non cambiou, os opcodes serán os mesmos, polo que este paso de compilación convértese nun desperdicio de recursos da CPU.
 
-An opcode cache prevents redundant compilation by storing opcodes in memory and reusing them on successive calls. It will typically check signature or modification time of the file first, in case there have been any changes.
+Un caché de opcode prevén a compilación redundante almacenando opcodes en memoria e reutilizándoos en chamadas sucesivas. Tipicamente verificará a sinatura ou tempo de modificación do arquivo primeiro, no caso de que houbese cambios.
 
-It's likely an opcode cache will make a significant speed improvement to your application.  Since PHP 5.5 there is one built in - [Zend OPcache][opcache-book]. Depending on your PHP package/distribution, it's usually turned on by default - check [opcache.enable](https://www.php.net/manual/opcache.configuration.php#ini.opcache.enable) and the output of `phpinfo()` to make sure. For earlier versions there's a PECL extension.
+É probable que un caché de opcode faga unha mellora significativa de velocidade na túa aplicación. Desde PHP 5.5 hai un integrado - [Zend OPcache][opcache-book]. Dependendo do teu paquete/distribución de PHP, xeralmente está activado por defecto - verifica [opcache.enable](https://www.php.net/manual/opcache.configuration.php#ini.opcache.enable) e a saída de `phpinfo()` para asegurar. Para versións anteriores hai unha extensión PECL.
 
-Read more about opcode caches:
+Ler máis sobre cachés de opcode:
 
-* [Zend OPcache][opcache-book] (bundled with PHP since 5.5)
-* Zend OPcache (formerly known as Zend Optimizer+) is now [open source][Zend Optimizer+]
-* [WinCache] (extension for MS Windows Server)
-* [list of PHP accelerators on Wikipedia][PHP_accelerators]
-* [PHP Preloading] - PHP >= 7.4
+* [Zend OPcache][opcache-book] (incluído con PHP desde 5.5)
+* Zend OPcache (anteriormente coñecido como Zend Optimizer+) agora é [código aberto][Zend Optimizer+]
+* [WinCache] (extensión para MS Windows Server)
+* [lista de aceleradores PHP en Wikipedia][PHP_accelerators]
+* [Precarga PHP] - PHP >= 7.4
 
 
 [opcache-book]: https://www.php.net/book.opcache

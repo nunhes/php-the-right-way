@@ -1,14 +1,14 @@
 ---
-title:   People to Follow
+title:   Xente para Seguir
 isChild: true
 anchor:  people_to_follow
 ---
 
-## People to Follow {#people_to_follow_title}
+## Xente para Seguir {#people_to_follow_title}
 
-It's difficult to find interesting and knowledgeable PHP
-community members when you are first starting out. You can
-find an abbreviated list of PHP community members to get you started at:
+É difícil atopar membros da comunidade PHP interesantes e coñecedores
+cando estás a comezar. Podes
+atopar unha lista abreviada de membros da comunidade PHP para comezar en:
 
 * <https://www.ogprogrammer.com/2017/06/28/how-to-get-connected-with-the-php-community/>
 * <https://x.com/CalEvans/lists/phpeople>

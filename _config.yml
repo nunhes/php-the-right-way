@@ -47,7 +47,7 @@ exclude:
 
 future: true
 
-title: "PHP: The Right Way"
-tagline: Reference for PHP best practices
-description: An easy-to-read, quick reference for PHP best practices, accepted coding standards, and links to authoritative PHP tutorials around the Web
+title: "PHP: O Camiño Correcto"
+tagline: Referencia para as mellores prácticas de PHP
+description: Unha referencia rápida e doada de ler para as mellores prácticas de PHP, os estándares de codificación aceptados e ligazóns a tutoriais autorizados de PHP na Web
 logo: /images/og-image.png

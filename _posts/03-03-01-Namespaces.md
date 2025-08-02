@@ -3,29 +3,29 @@ isChild: true
 anchor:  namespaces
 ---
 
-## Namespaces {#namespaces_title}
+## Espazos de Nomes {#namespaces_title}
 
-As mentioned above, the PHP community has a lot of developers creating lots of code. This means that one library's PHP
-code might use the same class name as another. When both libraries are used in the same namespace, they collide
-and cause trouble.
+Como se mencionou arriba, a comunidade PHP ten moitos desenvolvedores creando moito código. Isto significa que o código PHP dunha biblioteca
+podería usar o mesmo nome de clase que outra. Cando ambas as bibliotecas son usadas no mesmo espazo de nomes, coliden
+e causan problemas.
 
-_Namespaces_ solve this problem. As described in the PHP reference manual, namespaces may be compared to operating
-system directories that _namespace_ files; two files with the same name may co-exist in separate directories. Likewise,
-two PHP classes with the same name may co-exist in separate PHP namespaces. It's as simple as that.
+Os _espazos de nomes_ solucionan este problema. Como se describe no manual de referencia de PHP, os espazos de nomes poden ser comparados a directorios
+do sistema operativo que _espacian_ os arquivos; dous arquivos co mesmo nome poden coexistir en directorios separados. Do mesmo xeito,
+dúas clases PHP co mesmo nome poden coexistir en espazos de nomes PHP separados. É tan simple como iso.
 
-It is important for you to namespace your code so that it may be used by other developers without fear of colliding
-with other libraries.
+É importante para ti espaziar o teu código para que poida ser usado por outros desenvolvedores sen medo de colidir
+con outras bibliotecas.
 
-One recommended way to use namespaces is outlined in [PSR-4][psr4], which aims to provide a standard file, class and
-namespace convention to allow plug-and-play code.
+Unha forma recomendada de usar espazos de nomes está esbozada en [PSR-4][psr4], que pretende proporcionar un estándar de arquivo, clase e
+convención de espazo de nomes para permitir código plug-and-play.
 
-In October 2014 the PHP-FIG deprecated the previous autoloading standard: [PSR-0][psr0]. Both PSR-0 and PSR-4 are still perfectly usable.  The latter requires PHP 5.3, so many PHP 5.2-only projects implement PSR-0.
+En outubro de 2014 o PHP-FIG deprecou o estándar anterior de autoloading: [PSR-0][psr0]. Tanto PSR-0 como PSR-4 son aínda perfectamente usables. O último require PHP 5.3, polo que moitos proxectos só PHP 5.2 implementan PSR-0.
 
-If you're going to use an autoloader standard for a new application or package, look into PSR-4.
+Se vas usar un estándar de autoloader para unha nova aplicación ou paquete, mira PSR-4.
 
-* [Read about Namespaces][namespaces]
-* [Read about PSR-0][psr0]
-* [Read about PSR-4][psr4]
+* [Ler sobre Espazos de Nomes][namespaces]
+* [Ler sobre PSR-0][psr0]
+* [Ler sobre PSR-4][psr4]
 
 
 [namespaces]: https://www.php.net/language.namespaces

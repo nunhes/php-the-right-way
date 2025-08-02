@@ -3,26 +3,26 @@ isChild: true
 anchor:  command_line_interface
 ---
 
-## Command Line Interface {#command_line_interface_title}
+## Interfaz de Liña de Comandos {#command_line_interface_title}
 
-PHP was created to write web applications, but is also useful for scripting command line interface (CLI) programs.
-Command line PHP programs can help automate common tasks like testing, deployment, and application administration.
+PHP foi creado para escribir aplicacións web, pero tamén é útil para programar scripts de interfaz de liña de comandos (CLI).
+Os programas PHP de liña de comandos poden axudar a automatizar tarefas comúns como probas, despliegue e administración de aplicacións.
 
-CLI PHP programs are powerful because you can use your app's code directly without having to create and secure a web
-GUI for it. Just be sure **not** to put your CLI PHP scripts in your public web root!
+Os programas CLI PHP son poderosos porque podes usar o código da túa aplicación directamente sen ter que crear e asegurar unha
+GUI web para iso. Só asegúrate de **non** poñer os teus scripts PHP CLI no teu directorio raíz web público!
 
-Try running PHP from your command line:
+Tenta executar PHP desde a túa liña de comandos:
 
 {% highlight console %}
 > php -i
 {% endhighlight %}
 
-The `-i` option will print your PHP configuration just like the [`phpinfo()`][phpinfo] function.
+A opción `-i` imprimirá a túa configuración PHP xusto como a función [`phpinfo()`][phpinfo].
 
-The `-a` option provides an interactive shell, similar to ruby's IRB or python's interactive shell. There are a number
-of other useful [command line options][cli-options], too.
+A opción `-a` proporciona un shell interactivo, similar ao IRB de ruby ou o shell interactivo de python. Hai un número
+de outras [opcións de liña de comandos][cli-options] útiles tamén.
 
-Let's write a simple "Hello, $name" CLI program. To try it out, create a file named `hello.php`, as below.
+Escribamos un programa CLI simple "Ola, $name". Para probalo, crea un arquivo chamado `hello.php`, como abaixo.
 
 {% highlight php %}
 <?php
@@ -34,14 +34,14 @@ $name = $argv[1];
 echo "Hello, $name" . PHP_EOL;
 {% endhighlight %}
 
-PHP sets up two special variables based on the arguments your script is run with. [`$argc`][argc] is an integer
-variable containing the argument *count* and [`$argv`][argv] is an array variable containing each argument's *value*.
-The first argument is always the name of your PHP script file, in this case `hello.php`.
+PHP configura dúas variables especiais baseadas nos argumentos co que o teu script é executado. [`$argc`][argc] é unha variable enteira
+que contén o *conto* de argumentos e [`$argv`][argv] é unha variable array que contén o *valor* de cada argumento.
+O primeiro argumento é sempre o nome do teu arquivo script PHP, neste caso `hello.php`.
 
-The `exit()` expression is used with a non-zero number to let the shell know that the command failed. Commonly used
-exit codes can be found [here][exit-codes].
+A expresión `exit()` é usada cun número non cero para deixar que o shell saiba que o comando fallou. Códigos de saída comúns
+poden ser atopados [aquí][exit-codes].
 
-To run our script, above, from the command line:
+Para executar o noso script, de arriba, desde a liña de comandos:
 
 {% highlight console %}
 > php hello.php
@@ -51,7 +51,7 @@ Hello, world
 {% endhighlight %}
 
 
- * [Learn about running PHP from the command line][php-cli]
+ * [Aprender sobre executar PHP desde a liña de comandos][php-cli]
 
 [phpinfo]: https://www.php.net/function.phpinfo
 [cli-options]: https://www.php.net/features.commandline.options

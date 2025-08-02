@@ -3,19 +3,19 @@ isChild: true
 anchor:  templating_benefits
 ---
 
-## Benefits {#templating_benefits_title}
+## Beneficios {#templating_benefits_title}
 
-The main benefit to using templates is the clear separation they create between the presentation logic and the rest of
-your application. Templates have the sole responsibility of displaying formatted content. They are not responsible for
-data lookup, persistence or other more complex tasks. This leads to cleaner, more readable code which is especially
-helpful in a team environment where developers work on the server-side code (controllers, models) and designers work on
-the client-side code (markup).
+O principal beneficio de usar plantillas é a clara separación que crean entre a lóxica de presentación e o resto da
+túa aplicación. As plantillas teñen a única responsabilidade de mostrar contido formateado. Non son responsables de
+búsqueda de datos, persistencia ou outras tarefas máis complexas. Isto leva a código máis limpo e lexíbel que é especialmente
+útil nun ambiente de equipo onde os desenvolvedores traballan no código do lado do servidor (controladores, modelos) e os deseñadores traballan no
+código do lado do cliente (marcado).
 
-Templates also improve the organization of presentation code. Templates are typically placed in a "views" folder, each
-defined within a single file. This approach encourages code reuse where larger blocks of code are broken into smaller,
-reusable pieces, often called partials. For example, your site header and footer can each be defined as templates,
-which are then included before and after each page template.
+As plantillas tamén melloran a organización do código de presentación. As plantillas tipicamente son colocadas nunha carpeta "views", cada
+unha definida dentro dun único arquivo. Este enfoque fomenta a reutilización de código onde bloques máis grandes de código son rotos en pezas máis pequenas
+e reutilizábeis, a miúdo chamadas parciais. Por exemplo, o cabeceira e pé do teu sitio poden ser definidos como plantillas,
+que entón son incluídas antes e despois de cada plantilla de páxina.
 
-Finally, depending on the library you use, templates can offer more security by automatically escaping user-generated
-content. Some libraries even offer sand-boxing, where template designers are only given access to white-listed
-variables and functions.
+Finalmente, dependendo da biblioteca que uses, as plantillas poden ofrecer máis seguridade escapando automaticamente o contido
+xerado polo usuario. Algunhas bibliotecas incluso ofrecen sand-boxing, onde os deseñadores de plantillas só teñen acceso a variables
+e funcións de lista branca.

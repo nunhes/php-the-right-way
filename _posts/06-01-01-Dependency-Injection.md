@@ -1,15 +1,15 @@
 ---
-title:  Dependency Injection
+title:  Inxección de Dependencias
 anchor: dependency_injection
 ---
 
-# Dependency Injection {#dependency_injection_title}
+# Inxección de Dependencias {#dependency_injection_title}
 
-From [Wikipedia](https://wikipedia.org/wiki/Dependency_injection):
+Desde [Wikipedia](https://wikipedia.org/wiki/Dependency_injection):
 
-> Dependency injection is a software design pattern that allows the removal of hard-coded dependencies and makes it
-> possible to change them, whether at run-time or compile-time.
+> A inxección de dependencias é un patrón de deseño de software que permite a eliminación de dependencias codificadas a man e fai
+> posible cambialas, sexa en tempo de execución ou tempo de compilación.
 
-This quote makes the concept sound much more complicated than it actually is. Dependency Injection is providing a
-component with its dependencies either through constructor injection, method calls or the setting of properties. It is
-that simple.
+Esta cita fai que o concepto soe moito máis complicado do que realmente é. A Inxección de Dependencias é proporcionar a un
+compoñente as súas dependencias a través de inxección de construtor, chamadas de método ou a configuración de propiedades. É
+tan simple como iso.

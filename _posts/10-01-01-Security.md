@@ -2,7 +2,7 @@
 anchor: security
 ---
 
-# Security {#security_title}
+# Seguridade {#security_title}
 
-The best resource I've found on PHP security is [The 2018 Guide to Building Secure PHP Software](https://paragonie.com/blog/2017/12/2018-guide-building-secure-php-software) by
+O mellor recurso que atopei sobre seguridade PHP é [The 2018 Guide to Building Secure PHP Software](https://paragonie.com/blog/2017/12/2018-guide-building-secure-php-software) por
 [Paragon Initiative](https://paragonie.com/).

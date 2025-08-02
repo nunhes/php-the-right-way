@@ -3,75 +3,75 @@ isChild: true
 anchor:  linux_setup
 ---
 
-## Linux Setup {#linux_setup_title}
+## Configuración de Linux {#linux_setup_title}
 
-Most GNU/Linux distributions come with PHP available from the official repositories, but those packages usually are a little behind the current stable version. There are multiple ways to get newer PHP versions on such distributions.
+A maioría das distribucións GNU/Linux veñen con PHP dispoñible desde os repositorios oficiais, pero eses paquetes xeralmente están un pouco atrasados respecto á versión estable actual. Hai múltiples formas de obter versións máis recentes de PHP en tales distribucións.
 
-### Ubuntu-based distributions
+### Distribucións baseadas en Ubuntu
 
-On Ubuntu and Debian-based GNU/Linux distributions, for instance, the best alternatives for native packages are provided and maintained by [Ondřej Surý][Ondrej Sury Blog], through his Personal Package Archive (PPA) on Ubuntu and DPA/bikeshed on Debian. Find instructions for each of these below.
+En Ubuntu e distribucións GNU/Linux baseadas en Debian, por exemplo, as mellores alternativas para paquetes nativos son proporcionadas e mantidas por [Ondřej Surý][Ondrej Sury Blog], a través do seu Personal Package Archive (PPA) en Ubuntu e DPA/bikeshed en Debian. Atopa instrucións para cada un destes abaixo.
 
-For Ubuntu distributions, the [PPA by Ondřej Surý][Ondrej Sury PPA] provides supported PHP versions along with many PECL extensions. To add this PPA to your system, perform the following steps in your terminal:
+Para distribucións Ubuntu, o [PPA de Ondřej Surý][Ondrej Sury PPA] proporciona versións soportadas de PHP xunto con moitas extensións PECL. Para engadir este PPA ao teu sistema, executa os seguintes pasos no teu terminal:
 
-1. First, add the PPA to your system's software sources using the command:
+1. Primeiro, engade o PPA ás fontes de software do teu sistema usando o comando:
 
    ```bash
    sudo add-apt-repository ppa:ondrej/php
    ```
 
-2. After adding the PPA, update your system's package list:
+2. Despois de engadir o PPA, actualiza a lista de paquetes do teu sistema:
 
    ```bash
    sudo apt update
    ```
 
-This will ensure that your system can access and install the latest PHP packages available in the PPA.
+Isto asegurará que o teu sistema poida acceder e instalar os paquetes PHP máis recentes dispoñibles no PPA.
 
-### Debian-based distributions
+### Distribucións baseadas en Debian
 
-For Debian-based distributions, Ondřej Surý also provides a [bikeshed][bikeshed] (Debian equivalent of a PPA). To add the bikeshed to your system and update it, follow these steps:
+Para distribucións baseadas en Debian, Ondřej Surý tamén proporciona un [bikeshed][bikeshed] (equivalente de Debian dun PPA). Para engadir o bikeshed ao teu sistema e actualizalo, segue estes pasos:
 
-1. Ensure that you have root access. If not, you might need to use `sudo` for the following commands.
+1. Asegúrate de que tes acceso root. Se non, poderías necesitar usar `sudo` para os seguintes comandos.
 
-2. Update your system's package list:
+2. Actualiza a lista de paquetes do teu sistema:
 
    ```bash
    sudo apt-get update
    ```
 
-3. Install `lsb-release`, `ca-certificates`, and `curl`:
+3. Instala `lsb-release`, `ca-certificates`, e `curl`:
 
    ```bash
    sudo apt-get -y install lsb-release ca-certificates curl
    ```
 
-4. Download the signing key for the repository:
+4. Descarga a chave de sinatura para o repositorio:
 
    ```bash
    sudo curl -sSLo /usr/share/keyrings/deb.sury.org-php.gpg https://packages.sury.org/php/apt.gpg
    ```
 
-5. Add the repository to your system's software sources:
+5. Engade o repositorio ás fontes de software do teu sistema:
 
    ```bash
    sudo sh -c 'echo "deb [signed-by=/usr/share/keyrings/deb.sury.org-php.gpg] https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list'
    ```
 
-6. Finally, update your system's package list again:
+6. Finalmente, actualiza a lista de paquetes do teu sistema de novo:
 
    ```bash
    sudo apt-get update
    ```
 
-With these steps, your system will be able to install the latest PHP packages from the bikeshed.
+Con estes pasos, o teu sistema poderá instalar os paquetes PHP máis recentes desde o bikeshed.
 
-### RPM-based distributions
+### Distribucións baseadas en RPM
 
-On RPM-based distributions (CentOS, Fedora, RHEL, etc.) you can use the [Remi's RPM repository][remi-repo] to install the latest PHP version or to have multiple PHP versions simultaneously available.
+En distribucións baseadas en RPM (CentOS, Fedora, RHEL, etc.) podes usar o [repositorio RPM de Remi][remi-repo] para instalar a versión máis recente de PHP ou para ter múltiples versións de PHP dispoñibles simultaneamente.
 
-There is a [configuration wizard][remi-wizard] available to configure your RPM-based distribution.
+Hai un [asistente de configuración][remi-wizard] dispoñible para configurar a túa distribución baseada en RPM.
 
-All that said, you can always use containers or compile the PHP source code from scratch.
+Todo isto dito, sempre podes usar contedores ou compilar o código fonte de PHP desde cero.
 
 [Ondrej Sury Blog]: https://deb.sury.org/
 [Ondrej Sury PPA]: https://launchpad.net/~ondrej/+archive/ubuntu/php

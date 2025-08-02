@@ -2,4 +2,4 @@
 anchor: coding_practices
 ---
 
-# Coding Practices {#coding_practices_title}
+# Prácticas de Codificación {#coding_practices_title}

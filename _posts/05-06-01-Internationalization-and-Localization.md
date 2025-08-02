@@ -1,109 +1,109 @@
 ---
-title:   Internationalization and Localization
+title:   Internacionalización e Localización
 isChild: true
 anchor:  i18n_l10n
 ---
 
-## Internationalization (i18n) and Localization (l10n) {#i18n_l10n_title}
+## Internacionalización (i18n) e Localización (l10n) {#i18n_l10n_title}
 
-_Disclaimer for newcomers: i18n and l10n are numeronyms, a kind of abbreviation where numbers are used to shorten
-words - in our case, internationalization becomes i18n and localization, l10n._
+_Descargo de responsabilidade para principiantes: i18n e l10n son numerónimos, un tipo de abreviatura onde os números son usados para acurtar
+palabras - no noso caso, internacionalización convértese en i18n e localización, l10n._
 
-First of all, we need to define those two similar concepts and other related things:
+Primeiro de todo, necesitamos definir eses dous conceptos similares e outras cousas relacionadas:
 
-- **Internationalization** is when you organize your code so it can be adapted to different languages or regions
-without refactorings. This action is usually done once - preferably, at the beginning of the project, or else you will
-probably need some huge changes in the source!
-- **Localization** happens when you adapt the interface (mainly) by translating contents, based on the i18n work done
-before. It usually is done every time a new language or region needs support and is updated when new interface pieces
-are added, as they need to be available in all supported languages.
-- **Pluralization** defines the rules required between distinct languages to interoperate strings containing numbers and 
-counters. For instance, in English when you have only one item, it is singular, and anything different from that is 
-called plural; plural in this language is indicated by adding an S after some words, and sometimes changes parts of it.
-In other languages, such as Russian or Serbian, there are two plural forms in addition to the singular - you may even
-find languages with a total of four, five or six forms, such as Slovenian, Irish or Arabic.
+- **Internacionalización** é cando organizas o teu código para que poida ser adaptado a diferentes linguaxes ou rexións
+sen refactorizacións. Esta acción xeralmente faise unha vez - preferiblemente, ao inicio do proxecto, ou senón probablemente
+necesitarás algúns cambios enormes no código fonte!
+- **Localización** acontece cando adaptas a interface (principalmente) traducindo contidos, baseado no traballo i18n feito
+antes. Xeralmente faise cada vez que unha nova linguaxe ou rexión necesita soporte e é actualizada cando novas pezas de interface
+son engadidas, xa que necesitan estar dispoñíbeis en todas as linguaxes soportadas.
+- **Pluralización** define as regras requiridas entre linguaxes distintas para interoperar cadeas que conteñen números e 
+contadores. Por exemplo, en inglés cando só tes un elemento, é singular, e calquera cousa diferente diso é 
+chamado plural; o plural nesta linguaxe é indicado engadindo un S despois dalgunhas palabras, e ás veces cambia partes dela.
+Noutras linguaxes, como ruso ou serbio, hai dúas formas plurales ademais do singular - incluso podes
+atopar linguaxes cun total de catro, cinco ou seis formas, como esloveno, irlandés ou árabe.
 
-## Common ways to implement
-The easiest way to internationalize PHP software is by using array files and using those strings in templates, such as
-`<h1><?=$TRANS['title_about_page']?></h1>`. This way is, however, hardly recommended for serious projects, as it poses
-some maintenance issues along the road - some might appear in the very beginning, such as pluralization. So, please,
-don't try this if your project will contain more than a couple of pages.
+## Formas comúns de implementar
+A forma máis fácil de internacionalizar software PHP é usando arquivos de array e usando esas cadeas en plantillas, como
+`<h1><?=$TRANS['title_about_page']?></h1>`. Esta forma é, con todo, dificilmente recomendada para proxectos serios, xa que presenta
+algúns problemas de mantemento ao longo do camiño - algúns poden aparecer no mesmo inicio, como a pluralización. Así que, por favor,
+non tentes isto se o teu proxecto conterá máis de un par de páxinas.
 
-The most classic way and often taken as reference for i18n and l10n is a [Unix tool called `gettext`][gettext]. It dates
-back to 1995 and is still a complete implementation for translating software. It is easy enough to get running, while
-still sporting powerful supporting tools. It is about Gettext we will be talking here. Also, to help you not get messy
-over the command-line, we will be presenting a great GUI application that can be used to easily update your l10n source.
+A forma máis clásica e a miúdo tomada como referencia para i18n e l10n é unha [ferramenta Unix chamada `gettext`][gettext]. Data
+de 1995 e aínda é unha implementación completa para traducir software. É fácil de facer funcionar, mentres
+aínda ten ferramentas de soporte poderosas. É sobre Gettext do que falaremos aquí. Tamén, para axudarte a non confundirte
+coa liña de comandos, presentaremos unha gran aplicación GUI que pode ser usada para actualizar facilmente a túa fonte l10n.
 
-### Other tools
+### Outras ferramentas
 
-There are common libraries used that support Gettext and other implementations of i18n. Some of them may seem easier to
-install or sport additional features or i18n file formats. In this document, we focus on the tools provided with the
-PHP core, but here we list others for completion:
+Hai bibliotecas comúns usadas que soportan Gettext e outras implementacións de i18n. Algunhas delas poden parecer máis fáciles de
+instalar ou ter funcionalidades adicionais ou formatos de arquivo i18n. Neste documento, enfocámonos nas ferramentas proporcionadas co
+núcleo de PHP, pero aquí listamos outras para completar:
 
-- [aura/intl][aura-intl]: Provides internationalization (I18N) tools, specifically package-oriented per-locale message
-translation. It uses array formats for messages. Does not provide a message extractor, but does provide advanced
-message formatting via the `intl` extension (including pluralized messages).
-- [php-gettext/Gettext][php-gettext]: Gettext support with an OO interface; includes improved helper functions, powerful
-extractors for several file formats (some of them not supported natively by the `gettext` command), and can also export
-to other formats besides `.mo/.po` files. Can be useful if you need to integrate your translation files into other
-parts of the system, like a JavaScript interface.
-- [symfony/translation][symfony]: supports a lot of different formats, but recommends using verbose XLIFF's. Doesn't
-include helper functions nor a built-in extractor, but supports placeholders using `strtr()` internally.
-- [laminas/laminas-i18n][laminas]: supports array and INI files, or Gettext formats. Implements a caching layer to save you from
-reading the filesystem every time. It also includes view helpers, and locale-aware input filters and validators.
-However, it has no message extractor.
+- [aura/intl][aura-intl]: Proporciona ferramentas de internacionalización (I18N), especificamente tradución de mensaxes orientada a paquetes por localidade.
+Usa formatos de array para mensaxes. Non proporciona un extractor de mensaxes, pero proporciona formateado avanzado
+de mensaxes vía a extensión `intl` (incluíndo mensaxes pluralizadas).
+- [php-gettext/Gettext][php-gettext]: Soporte Gettext cunha interface OO; inclúe funcións auxiliares melloradas, extractores poderosos
+para varios formatos de arquivo (algúns deles non soportados nativamente polo comando `gettext`), e tamén pode exportar
+a outros formatos ademais dos arquivos `.mo/.po`. Pode ser útil se necesitas integrar os teus arquivos de tradución noutras
+partes do sistema, como unha interface JavaScript.
+- [symfony/translation][symfony]: soporta moitos formatos diferentes, pero recomenda usar XLIFF verbosos. Non inclúe
+funcións auxiliares nin un extractor integrado, pero soporta marcadores de posición usando `strtr()` internamente.
+- [laminas/laminas-i18n][laminas]: soporta arquivos de array e INI, ou formatos Gettext. Implementa unha capa de caché para aforrarte de
+ler o sistema de arquivos cada vez. Tamén inclúe axudantes de vista, e filtros de entrada e validadores conscientes de localidade.
+Con todo, non ten extractor de mensaxes.
 
-Other frameworks also include i18n modules, but those are not available outside of their codebases:
+Outros frameworks tamén inclúen módulos i18n, pero eses non están dispoñíbeis fóra das súas bases de código:
 
-- [Laravel] supports basic array files, has no automatic extractor but includes a `@lang` helper for template files.
-- [Yii] supports array, Gettext, and database-based translation, and includes a messages extractor. It is backed by the
-[`Intl`][intl] extension, available since PHP 5.3, and based on the [ICU project]; this enables Yii to run powerful
-replacements, like spelling out numbers, formatting dates, times, intervals, currency, and ordinals.
+- [Laravel] soporta arquivos de array básicos, non ten extractor automático pero inclúe un axudante `@lang` para arquivos de plantilla.
+- [Yii] soporta tradución baseada en array, Gettext e base de datos, e inclúe un extractor de mensaxes. Está respaldado pola
+extensión [`Intl`][intl], dispoñíbel desde PHP 5.3, e baseada no [proxecto ICU]; isto permite a Yii executar substitucións poderosas,
+como deletrear números, formatear datas, tempos, intervalos, moeda e ordinais.
 
-If you decide to go for one of the libraries that provide no extractors, you may want to use the gettext formats, so
-you can use the original gettext toolchain (including Poedit) as described in the rest of the chapter.
+Se decides ir por unha das bibliotecas que non proporcionan extractores, podes querer usar os formatos gettext, para que
+podes usar a cadea de ferramentas gettext orixinal (incluíndo Poedit) como descrito no resto do capítulo.
 
 ## Gettext
 
-### Installation
-You might need to install Gettext and the related PHP library by using your package manager, like `apt-get` or `yum`.
-After installed, enable it by adding `extension=gettext.so` (Linux/Unix) or `extension=php_gettext.dll` (Windows) to
-your `php.ini`.
+### Instalación
+Podes necesitar instalar Gettext e a biblioteca PHP relacionada usando o teu xestor de paquetes, como `apt-get` ou `yum`.
+Despois de instalado, habilítao engadindo `extension=gettext.so` (Linux/Unix) ou `extension=php_gettext.dll` (Windows) ao
+teu `php.ini`.
 
-Here we will also be using [Poedit] to create translation files. You will probably find it in your system's package
-manager; it is available for Unix, macOS, and Windows, and can be [downloaded for free on their website][poedit_download]
-as well.
+Aquí tamén usaremos [Poedit] para crear arquivos de tradución. Probablemente o atoparás no xestor de paquetes do teu sistema;
+está dispoñíbel para Unix, macOS e Windows, e pode ser [descargado gratis no seu sitio web][poedit_download]
+tamén.
 
-### Structure
+### Estrutura
 
-#### Types of files
-There are three files you usually deal with while working with gettext. The main ones are PO (Portable Object) and
-MO (Machine Object) files, the first being a list of readable "translated objects" and the second, the corresponding
-binary to be interpreted by gettext when doing localization. There's also a POT (Template) file, which simply contains
-all existing keys from your source files, and can be used as a guide to generate and update all PO files. Those template
-files are not mandatory: depending on the tool you are using to do l10n, you can go just fine with only PO/MO files.
-You will always have one pair of PO/MO files per language and region, but only one POT per domain.
+#### Tipos de arquivos
+Hai tres arquivos co que xeralmente traballas mentres traballas con gettext. Os principais son os arquivos PO (Obxecto Portábel) e
+MO (Obxecto de Máquina), o primeiro sendo unha lista de "obxectos traducidos" lexíbeis e o segundo, o binario correspondente
+para ser interpretado por gettext cando fai localización. Tamén hai un arquivo POT (Plantilla), que simplemente contén
+todas as chaves existentes dos teus arquivos fonte, e pode ser usado como unha guía para xerar e actualizar todos os arquivos PO. Eses arquivos
+de plantilla non son obrigatorios: dependendo da ferramenta que estás usando para facer l10n, podes ir ben só con arquivos PO/MO.
+Sempre terás un par de arquivos PO/MO por linguaxe e rexión, pero só un POT por dominio.
 
-### Domains
-There are some cases, in big projects, where you might need to separate translations when the same words convey 
-different meaning given a context. In those cases, you split them into different _domains_. They are, basically, named
-groups of POT/PO/MO files, where the filename is the said _translation domain_. Small and medium-sized projects usually,
-for simplicity, use only one domain; its name is arbitrary, but we will be using "main" for our code samples.
-In [Symfony] projects, for example, domains are used to separate the translation for validation messages.
+### Dominios
+Hai algúns casos, en proxectos grandes, onde podes necesitar separar traducións cando as mesmas palabras transmiten 
+significados diferentes dado un contexto. Neses casos, sepáranos en diferentes _dominios_. Son, basicamente, grupos nomeados
+de arquivos POT/PO/MO, onde o nome do arquivo é o dito _dominio de tradución_. Proxectos pequenos e medianos xeralmente,
+por simplicidade, usan só un dominio; o seu nome é arbitrario, pero usaremos "main" para os nosos exemplos de código.
+En proxectos [Symfony], por exemplo, os dominios son usados para separar a tradución para mensaxes de validación.
 
-#### Locale code
-A locale is simply a code that identifies one version of a language. It is defined following the [ISO 639-1][639-1] and 
-[ISO 3166-1 alpha-2][3166-1] specs: two lower-case letters for the language, optionally followed by an underline and two
-upper-case letters identifying the country or regional code. For [rare languages][rare], three letters are used.
+#### Código de localidade
+Unha localidade é simplemente un código que identifica unha versión dunha linguaxe. Está definido seguindo as especificacións [ISO 639-1][639-1] e 
+[ISO 3166-1 alpha-2][3166-1]: dúas letras minúsculas para a linguaxe, opcionalmente seguidas por un subliñado e dúas
+letras maiúsculas identificando o país ou código rexional. Para [linguaxes raras][rare], úsanse tres letras.
 
-For some speakers, the country part may seem redundant. In fact, some languages have dialects in different
-countries, such as Austrian German (`de_AT`) or Brazilian Portuguese (`pt_BR`). The second part is used to distinguish
-between those dialects - when it is not present, it is taken as a "generic" or "hybrid" version of the language.
+Para algúns falantes, a parte do país pode parecer redundante. De feito, algunhas linguaxes teñen dialectos en diferentes
+países, como alemán austríaco (`de_AT`) ou portugués brasileiro (`pt_BR`). A segunda parte é usada para distinguir
+entre eses dialectos - cando non está presente, é tomado como unha versión "xenérica" ou "híbrida" da linguaxe.
 
-### Directory structure
-To use Gettext, we will need to adhere to a specific structure of folders. First, you will need to select an arbitrary
-root for your l10n files in your source repository. Inside it, you will have a folder for each needed locale, and a
-fixed `LC_MESSAGES` folder that will contain all your PO/MO pairs. Example:
+### Estrutura de directorios
+Para usar Gettext, necesitaremos adherir a unha estrutura específica de carpetas. Primeiro, necesitarás seleccionar un directorio raíz arbitrario
+para os teus arquivos l10n no teu repositorio fonte. Dentro del, terás unha carpeta para cada localidade necesaria, e unha
+carpeta fixa `LC_MESSAGES` que conterá todos os teus pares PO/MO. Exemplo:
 
 {% highlight console %}
 <project root>
@@ -129,31 +129,31 @@ fixed `LC_MESSAGES` folder that will contain all your PO/MO pairs. Example:
        └─ ...
 {% endhighlight %}
 
-### Plural forms
-As we said in the introduction, different languages might sport different plural rules. However, gettext saves us from
-this trouble once again. When creating a new `.po` file, you will have to declare the [plural rules][plural] for that
-language, and translated pieces that are plural-sensitive will have a different form for each of those rules. When
-calling Gettext in code, you will have to specify the number related to the sentence, and it will work out the correct
-form to use - even using string substitution if needed.
+### Formas plurales
+Como dixemos na introdución, linguaxes diferentes poden ter regras plurales diferentes. Con todo, gettext aforranos de
+este problema unha vez máis. Cando creas un novo arquivo `.po`, terás que declarar as [regras plurales][plural] para esa
+linguaxe, e as pezas traducidas que son sensibles ao plural terán unha forma diferente para cada unha desas regras. Cando
+chamas Gettext no código, terás que especificar o número relacionado coa frase, e funcionará a forma correcta
+para usar - mesmo usando substitución de cadea se é necesario.
 
-Plural rules include the number of plurals available and a boolean test with `n` that would define in which rule the
-given number falls (starting the count with 0). For example:
+As regras plurales inclúen o número de plurais dispoñíbeis e unha proba booleana con `n` que definiría en que regra o
+número dado cae (comezando a conta con 0). Por exemplo:
 
-- Japanese: `nplurals=1; plural=0` - only one rule
-- English: `nplurals=2; plural=(n != 1);` - two rules, first if N is one, second rule otherwise
-- Brazilian Portuguese: `nplurals=2; plural=(n > 1);` - two rules, second if N is bigger than one, first otherwise
+- Xaponés: `nplurals=1; plural=0` - só unha regra
+- Inglés: `nplurals=2; plural=(n != 1);` - dúas regras, primeira se N é un, segunda regra en caso contrario
+- Portugués brasileiro: `nplurals=2; plural=(n > 1);` - dúas regras, segunda se N é maior que un, primeira en caso contrario
 
-Now that you understood the basis of how plural rules works - and if you didn't, please look at a deeper explanation
-on the [LingoHub tutorial][lingohub_plurals] -, you might want to copy the ones you need from a [list][plural] instead
-of writing them by hand.
+Agora que entendiches a base de como funcionan as regras plurales - e se non o fixeches, por favor mira unha explicación máis profunda
+no [tutorial de LingoHub][lingohub_plurals] -, podes querer copiar as que necesitas dunha [lista][plural] en lugar
+de escribilas a man.
 
-When calling out Gettext to do localization on sentences with counters, you will have to provide it the
-related number as well. Gettext will work out what rule should be in effect and use the correct localized version.
-You will need to include in the `.po` file a different sentence for each plural rule defined.
+Cando chamas Gettext para facer localización en frases con contadores, terás que proporcionarlle o
+número relacionado tamén. Gettext funcionará que regra debería estar en efecto e usar a versión localizada correcta.
+Necesitarás incluír no arquivo `.po` unha frase diferente para cada regra plural definida.
 
-### Sample implementation
-After all that theory, let's get a little practical. Here's an excerpt of a `.po` file - don't mind with its format,
-but with the overall content instead; you will learn how to edit it easily later:
+### Exemplo de implementación
+Despois de toda esa teoría, vamos facer algo práctico. Aquí hai un extracto dun arquivo `.po` - non te preocupes co seu formato,
+senón co contido xeral; aprenderás como editalo facilmente máis tarde:
 
 {% highlight po %}
 msgid ""
@@ -174,63 +174,63 @@ msgstr[0] "Só uma mensagem não lida"
 msgstr[1] "%d mensagens não lidas"
 {% endhighlight %}
 
-The first section works like a header, having the `msgid` and `msgstr` especially empty. It describes the file encoding,
-plural forms and other things that are less relevant.
-The second section translates a simple string from English to
-Brazilian Portuguese, and the third does the same, but leveraging string replacement from [`sprintf`][sprintf] so the
-translation may contain the user name and visit date.
-The last section is a sample of pluralization forms, displaying
-the singular and plural version as `msgid` in English and their corresponding translations as `msgstr` 0 and 1
-(following the number given by the plural rule). There, string replacement is used as well so the number can be seen
-directly in the sentence, by using `%d`. The plural forms always have two `msgid` (singular and plural), so it is
-advised not to use a complex language as the source of translation.
+A primeira sección funciona como un cabeceira, tendo o `msgid` e `msgstr` especialmente baleiros. Describe a codificación do arquivo,
+formas plurales e outras cousas que son menos relevantes.
+A segunda sección traduce unha cadea simple do inglés ao
+portugués brasileiro, e a terceira fai o mesmo, pero aproveitando a substitución de cadea de [`sprintf`][sprintf] para que a
+tradución poida conter o nome do usuario e data de visita.
+A última sección é un exemplo de formas de pluralización, mostrando
+a versión singular e plural como `msgid` en inglés e as súas traducións correspondentes como `msgstr` 0 e 1
+(seguindo o número dado pola regra plural). Alí, a substitución de cadea é usada tamén para que o número poida ser visto
+directamente na frase, usando `%d`. As formas plurales sempre teñen dous `msgid` (singular e plural), polo que é
+aconsellado non usar unha linguaxe complexa como a fonte de tradución.
 
-### Discussion on l10n keys
-As you might have noticed, we are using as source ID the actual sentence in English. That `msgid` is the same used
-throughout all your `.po` files, meaning other languages will have the same format and the same `msgid` fields but
-translated `msgstr` lines.
+### Discusión sobre chaves l10n
+Como podes ter notado, estamos usando como ID fonte a frase real en inglés. Ese `msgid` é o mesmo usado
+a través de todos os teus arquivos `.po`, significando que outras linguaxes terán o mesmo formato e os mesmos campos `msgid` pero
+liñas `msgstr` traducidas.
 
-Talking about translation keys, there are two main "schools" here:
+Falando sobre chaves de tradución, hai dúas "escolas" principais aquí:
 
-1. _`msgid` as a real sentence_.
-    The main advantages are:
-    - if there are pieces of the software untranslated in any given language, the key displayed will still maintain some
-    meaning. Example: if you happen to translate by heart from English to Spanish but need help to translate to French,
-    you might publish the new page with missing French sentences, and parts of the website would be displayed in English
-    instead;
-    - it is much easier for the translator to understand what's going on and do a proper translation based on the
+1. _`msgid` como unha frase real_.
+    As principais vantaxes son:
+    - se hai pezas do software non traducidas en calquera linguaxe dada, a chave mostrada aínda manterá algún
+    significado. Exemplo: se aconteces traducir de memoria do inglés ao español pero necesitas axuda para traducir ao francés,
+    podes publicar a nova páxina con frases francesas faltantes, e partes do sitio web serían mostradas en inglés
+    en cambio;
+    - é moito máis fácil para o tradutor entender que está pasando e facer unha tradución adecuada baseada no
     `msgid`;
-    - it gives you "free" l10n for one language - the source one;
-    - The only disadvantage: if you need to change the actual text, you would need to replace the same `msgid`
-    across several language files.
+    - dache l10n "gratis" para unha linguaxe - a fonte;
+    - A única desvantaxe: se necesitas cambiar o texto real, necesitarías substituir o mesmo `msgid`
+    a través de varios arquivos de linguaxe.
 
-2. _`msgid` as a unique, structured key_.
-It would describe the sentence role in the application in a structured way, including the template or part where the
-string is located instead of its content.
-    - it is a great way to have the code organized, separating the text content from the template logic.
-    - however, that could bring problems to the translator that would miss the context. A source language file would be
-    needed as a basis for other translations. Example: the developer would ideally have an `en.po` file, that
-    translators would read to understand what to write in `fr.po` for instance.
-    - missing translations would display meaningless keys on screen (`top_menu.welcome` instead of `Hello there, User!`
-    on the said untranslated French page). That is good it as would force translation to be complete before publishing -
-    however, bad as translation issues would be remarkably awful in the interface. Some libraries, though, include an
-    option to specify a given language as "fallback", having a similar behavior as the other approach.
+2. _`msgid` como unha chave única e estruturada_.
+Describiría o papel da frase na aplicación dunha forma estruturada, incluíndo a plantilla ou parte onde a
+cadea está localizada en lugar do seu contido.
+    - é unha gran forma de ter o código organizado, separando o contido de texto da lóxica da plantilla.
+    - con todo, iso podería traer problemas ao tradutor que perdería o contexto. Un arquivo de linguaxe fonte sería
+    necesario como base para outras traducións. Exemplo: o desenvolvedor idealmente tería un arquivo `en.po`, que
+    os tradutores lerían para entender que escribir en `fr.po` por exemplo.
+    - as traducións faltantes mostrarían chaves sen significado na pantalla (`top_menu.welcome` en lugar de `Hello there, User!`
+    na dita páxina francesa non traducida). Iso é bo xa que forzaría a tradución a ser completa antes de publicar -
+    con todo, malo xa que os problemas de tradución serían notablemente terribles na interface. Algunhas bibliotecas, con todo, inclúen unha
+    opción para especificar unha linguaxe dada como "fallback", tendo un comportamento similar ao outro enfoque.
 
-The [Gettext manual][manual] favors the first approach as, in general, it is easier for translators and users in
-case of trouble. That is how we will be working here as well. However, the [Symfony documentation][symfony-keys] favors
-keyword-based translation, to allow for independent changes of all translations without affecting templates as well.
+O [manual de Gettext][manual] favorece o primeiro enfoque xa que, en xeral, é máis fácil para tradutores e usuarios en
+caso de problemas. É así como tamén traballaremos aquí. Con todo, a [documentación de Symfony][symfony-keys] favorece
+tradución baseada en palabras clave, para permitir cambios independentes de todas as traducións sen afectar as plantillas tamén.
 
-### Everyday usage
-In a typical application, you would use some Gettext functions while writing static text in your pages. Those sentences
-would then appear in `.po` files, get translated, compiled into `.mo` files and then, used by Gettext when rendering
-the actual interface. Given that, let's tie together what we have discussed so far in a step-by-step example:
+### Uso cotián
+Nunha aplicación típica, usarías algunhas funcións Gettext mentres escribes texto estático nas túas páxinas. Esas frases
+entón aparecerían en arquivos `.po`, serían traducidas, compiladas en arquivos `.mo` e entón, usadas por Gettext cando renderiza
+a interface real. Dado iso, vamos atar xuntos o que discutimos ata agora nun exemplo paso a paso:
 
-#### 1. A sample template file, including some different gettext calls
+#### 1. Un arquivo de plantilla de exemplo, incluíndo algunhas chamadas gettext diferentes
 {% highlight php %}
 <?php include 'i18n_setup.php' ?>
 <div id="header">
     <h1><?=sprintf(gettext('Welcome, %s!'), $name)?></h1>
-    <!-- code indented this way only for legibility -->
+    <!-- código indentado desta forma só para lexibilidade -->
     <?php if ($unread): ?>
         <h2><?=sprintf(
             ngettext('Only one unread message',
@@ -245,17 +245,17 @@ the actual interface. Given that, let's tie together what we have discussed so f
 <p><?=gettext('We\'re now translating some strings')?></p>
 {% endhighlight %}
 
-- [`gettext()`][func] simply translates a `msgid` into its corresponding `msgstr` for a given language. There's also
-the shorthand function `_()` that works the same way;
-- [`ngettext()`][n_func] does the same but with plural rules;
-- There are also [`dgettext()`][d_func] and [`dngettext()`][dn_func], that allow you to override the domain for a single
-call. More on domain configuration in the next example.
+- [`gettext()`][func] simplemente traduce un `msgid` ao seu `msgstr` correspondente para unha linguaxe dada. Tamén hai
+a función abreviada `_()` que funciona da mesma forma;
+- [`ngettext()`][n_func] fai o mesmo pero con regras plurales;
+- Tamén hai [`dgettext()`][d_func] e [`dngettext()`][dn_func], que permiten que sobrescribas o dominio para unha única
+chamada. Máis sobre configuración de dominio no próximo exemplo.
 
-#### 2. A sample setup file (`i18n_setup.php` as used above), selecting the correct locale and configuring Gettext
+#### 2. Un arquivo de configuración de exemplo (`i18n_setup.php` como usado arriba), seleccionando a localidade correcta e configurando Gettext
 {% highlight php %}
 <?php
 /**
- * Verifies if the given $locale is supported in the project
+ * Verifica se a localidade dada $locale é soportada no proxecto
  * @param string $locale
  * @return bool
  */
@@ -263,18 +263,18 @@ function valid($locale) {
    return in_array($locale, ['en_US', 'en', 'pt_BR', 'pt', 'es_ES', 'es']);
 }
 
-//setting the source/default locale, for informational purposes
+//configurando a localidade fonte/por defecto, para propósitos informativos
 $lang = 'en_US';
 
 if (isset($_GET['lang']) && valid($_GET['lang'])) {
-    // the locale can be changed through the query-string
-    $lang = $_GET['lang'];    //you should sanitize this!
-    setcookie('lang', $lang); //it's stored in a cookie so it can be reused
+    // a localidade pode ser cambiada a través da query-string
+    $lang = $_GET['lang'];    //deberías sanitizar isto!
+    setcookie('lang', $lang); //está almacenado nunha cookie para que poida ser reusado
 } elseif (isset($_COOKIE['lang']) && valid($_COOKIE['lang'])) {
-    // if the cookie is present instead, let's just keep it
-    $lang = $_COOKIE['lang']; //you should sanitize this!
+    // se a cookie está presente en cambio, só mantémola
+    $lang = $_COOKIE['lang']; //deberías sanitizar isto!
 } elseif (isset($_SERVER['HTTP_ACCEPT_LANGUAGE'])) {
-    // default: look for the languages the browser says the user accepts
+    // por defecto: busca as linguaxes que o navegador di que o usuario acepta
     $langs = explode(',', $_SERVER['HTTP_ACCEPT_LANGUAGE']);
     array_walk($langs, function (&$lang) { $lang = strtr(strtok($lang, ';'), ['-' => '_']); });
     foreach ($langs as $browser_lang) {
@@ -285,119 +285,119 @@ if (isset($_GET['lang']) && valid($_GET['lang'])) {
     }
 }
 
-// here we define the global system locale given the found language
+// aquí definimos a localidade do sistema global dada a linguaxe atopada
 putenv("LANG=$lang");
 
-// this might be useful for date functions (LC_TIME) or money formatting (LC_MONETARY), for instance
+// isto pode ser útil para funcións de data (LC_TIME) ou formateado de diñeiro (LC_MONETARY), por exemplo
 setlocale(LC_ALL, $lang);
 
-// this will make Gettext look for ../locales/<lang>/LC_MESSAGES/main.mo
+// isto fará que Gettext busque en ../locales/<lang>/LC_MESSAGES/main.mo
 bindtextdomain('main', '../locales');
 
-// indicates in what encoding the file should be read
+// indica en que codificación o arquivo debería ser lido
 bind_textdomain_codeset('main', 'UTF-8');
 
-// if your application has additional domains, as cited before, you should bind them here as well
+// se a túa aplicación ten dominios adicionais, como citado antes, deberías vinculalos aquí tamén
 bindtextdomain('forum', '../locales');
 bind_textdomain_codeset('forum', 'UTF-8');
 
-// here we indicate the default domain the gettext() calls will respond to
+// aquí indicamos o dominio por defecto ao que as chamadas gettext() responderán
 textdomain('main');
 
-// this would look for the string in forum.mo instead of main.mo
+// isto buscaría a cadea en forum.mo en lugar de main.mo
 // echo dgettext('forum', 'Welcome back!');
 ?>
 {% endhighlight %}
 
-#### 3. Preparing translation for the first run
-One of the great advantages Gettext has over custom framework i18n packages is its extensive and powerful file format.
-"Oh man, that’s quite hard to understand and edit by hand, a simple array would be easier!" Make no mistake,
-applications like [Poedit] are here to help - _a lot_. You can get the program from [their website][poedit_download],
-it’s free and available for all platforms. It’s a pretty easy tool to get used to, and a very powerful one at the same
-time - using all features Gettext has available. This guide is based on PoEdit 1.8.
+#### 3. Preparando tradución para a primeira execución
+Unha das grandes vantaxes que Gettext ten sobre paquetes i18n de frameworks personalizados é o seu formato de arquivo extenso e poderoso.
+"¡Oh home, iso é bastante difícil de entender e editar a man, un array simple sería máis fácil!" Non te equivoques,
+aplicacións como [Poedit] están aquí para axudar - _moito_. Podes obter o programa do [seu sitio web][poedit_download],
+é gratis e está dispoñíbel para todas as plataformas. É unha ferramenta bastante fácil de acostumbrarse, e unha moi poderosa ao mesmo
+tempo - usando todas as funcionalidades que Gettext ten dispoñíbeis. Esta guía está baseada en PoEdit 1.8.
 
-In the first run, you should select “File > New...” from the menu. You’ll be asked straight ahead for the language:
-here you can select/filter the language you want to translate to, or use that format we mentioned before, such as
-`en_US` or `pt_BR`.
+Na primeira execución, deberías seleccionar "File > New..." do menú. Serás preguntado directamente pola linguaxe:
+aquí podes seleccionar/filtrar a linguaxe que queres traducir, ou usar ese formato que mencionamos antes, como
+`en_US` ou `pt_BR`.
 
-Now, save the file - using that directory structure we mentioned as well. Then you should click “Extract from sources”,
-and here you’ll configure various settings for the extraction and translation tasks. You’ll be able to find all those
-later through “Catalog > Properties”:
+Agora, garda o arquivo - usando esa estrutura de directorios que mencionamos tamén. Entón deberías facer clic en "Extract from sources",
+e aquí configurarás varias configuracións para as tarefas de extracción e tradución. Poderás atopar todas esas
+máis tarde a través de "Catalog > Properties":
 
-- Source paths: here you must include all folders from the project where `gettext()` (and siblings) are called - this
-is usually your templates/views folder(s). This is the only mandatory setting;
-- Translation properties:
-    - Project name and version, Team and Team’s email address: useful information that goes in the .po file header;
-    - Plural forms: here go those rules we mentioned before - there’s a link in there with samples as well. You can
-    leave it with the default option most of the time, as PoEdit already includes a handy database of plural rules for
-    many languages.
-    - Charsets: UTF-8, preferably;
-    - Source code charset: set here the charset used by your codebase - probably UTF-8 as well, right?
-- Source keywords: The underlying software knows how `gettext()` and similar function calls look like in several
-programming languages, but you might as well create your own translation functions. It will be here you’ll add those
-other methods. This will be discussed later in the “Tips” section.
+- Camiños fonte: aquí debes incluír todas as carpetas do proxecto onde `gettext()` (e similares) son chamados - isto
+xeralmente é a(s) túa(s) carpeta(s) de plantillas/vistas. Esta é a única configuración obrigatoria;
+- Propiedades de tradución:
+    - Nome do proxecto e versión, Equipo e enderezo de email do equipo: información útil que vai no cabeceira do arquivo .po;
+    - Formas plurales: aquí van esas regras que mencionamos antes - hai un enlace alí con exemplos tamén. Podes
+    deixalo coa opción por defecto a maioría do tempo, xa que PoEdit xa inclúe unha base de datos práctica de regras plurales para
+    moitas linguaxes.
+    - Charsets: UTF-8, preferiblemente;
+    - Charset do código fonte: establece aquí o charset usado pola túa base de código - probablemente UTF-8 tamén, certo?
+- Palabras clave fonte: O software subxacente sabe como `gettext()` e chamadas de función similares se ven en varios
+linguaxes de programación, pero tamén podes crear as túas propias funcións de tradución. Será aquí onde engadirás eses
+outros métodos. Isto será discutido máis tarde na sección "Consellos".
 
-After setting those points it will run a scan through your source files to find all the localization calls. After every
-scan PoEdit will display a summary of what was found and what was removed from the source files. New entries will fed
-empty into the translation table, and you’ll start typing in the localized versions of those strings. Save it and a .mo
-file will be (re)compiled into the same folder and ta-dah: your project is internationalized.
+Despois de establecer eses puntos executará unha busca a través dos teus arquivos fonte para atopar todas as chamadas de localización. Despois de cada
+busca PoEdit mostrará un resumo do que foi atopado e do que foi eliminado dos arquivos fonte. As novas entradas serán alimentadas
+baleiras na táboa de tradución, e comezarás a escribir as versións localizadas desas cadeas. Gardao e un arquivo .mo
+será (re)compilado na mesma carpeta e ta-dah: o teu proxecto está internacionalizado.
 
-#### 4. Translating strings
-As you may have noticed before, there are two main types of localized strings: simple ones and those with plural
-forms. The first ones have simply two boxes: source and localized string. The source string cannot be modified as
-Gettext/Poedit do not include the powers to alter your source files - you should change the source itself and rescan
-the files. Tip: you may right-click a translation line and it will hint you with the source files and lines where that
-string is being used.
-On the other hand, plural form strings include two boxes to show the two source strings, and tabs so you can configure
-the different final forms.
+#### 4. Traducindo cadeas
+Como podes ter notado antes, hai dous tipos principais de cadeas localizadas: simples e aquelas con formas
+plurales. As primeiras simplemente teñen dúas caixas: cadea fonte e cadea localizada. A cadea fonte non pode ser modificada xa que
+Gettext/Poedit non inclúen os poderes para alterar os teus arquivos fonte - deberías cambiar a fonte en si e rebuscar
+os arquivos. Consello: podes facer clic dereito nunha liña de tradución e che dará unha pista cos arquivos fonte e liñas onde esa
+cadea está sendo usada.
+Por outra banda, as cadeas de forma plural inclúen dúas caixas para mostrar as dúas cadeas fonte, e pestanas para que poidas configurar
+as diferentes formas finais.
 
-Whenever you change your sources and need to update the translations, just hit Refresh and Poedit will rescan the code,
-removing non-existent entries, merging the ones that changed and adding new ones. It may also try to guess some
-translations, based on other ones you did. Those guesses and the changed entries will receive a "Fuzzy" marker,
-indicating it needs review, appearing golden in the list. It is also useful if you have a translation team and someone
-tries to write something they are not sure about: just mark Fuzzy, and someone else will review later.
+Sempre que cambies as túas fontes e necesites actualizar as traducións, só fai clic en Refresh e Poedit rebuscará o código,
+eliminando entradas non existentes, fusionando as que cambiaron e engadindo novas. Tamén pode tentar adiviñar algunhas
+traducións, baseadas noutras que fixeches. Esas adiviñacións e as entradas cambiadas recibirán un marcador "Fuzzy",
+indicando que necesita revisión, aparecendo dourado na lista. Tamén é útil se tes un equipo de tradución e alguén
+tenta escribir algo do que non están seguros: só marca Fuzzy, e alguén máis revisará máis tarde.
 
-Finally, it is advised to leave "View > Untranslated entries first" marked, as it will help you _a lot_ to not forget
-any entry. From that menu, you can also open parts of the UI that allow you to leave contextual information for
-translators if needed.
+Finalmente, é aconsellado deixar "View > Untranslated entries first" marcado, xa que che axudará _moito_ a non esquecer
+ningunha entrada. Desde ese menú, tamén podes abrir partes da UI que permiten deixar información contextual para
+tradutores se é necesario.
 
-### Tips & Tricks
+### Consellos e Trucos
 
-#### Possible caching issues
-If you are running PHP as a module on Apache (`mod_php`), you might face issues with the `.mo` file being cached. It
-happens the first time it is read, and then, to update it, you might need to restart the server. On Nginx and PHP5 it
-usually takes only a couple of page refreshes to refresh the translation cache, and on PHP7 it is rarely needed.
+#### Posíbeis problemas de caché
+Se estás executando PHP como un módulo en Apache (`mod_php`), podes enfrontarte problemas co arquivo `.mo` sendo cacheado. Acontece
+a primeira vez que é lido, e entón, para actualizalo, podes necesitar reiniciar o servidor. En Nginx e PHP5
+xeralmente leva só un par de refrescos de páxina para refrescar o caché de tradución, e en PHP7 raramente é necesario.
 
-#### Additional helper functions
-As preferred by many people, it is easier to use `_()` instead of `gettext()`. Many custom i18n libraries from
-frameworks use something similar to `t()` as well, to make translated code shorter. However, that is the only function
-that sports a shortcut. You might want to add in your project some others, such as `__()` or `_n()` for `ngettext()`,
-or maybe a fancy `_r()` that would join `gettext()` and `sprintf()` calls. Other libraries, such as
-[php-gettext's Gettext][php-gettext] also provide helper functions like these.
+#### Funcións auxiliares adicionais
+Como preferido por moita xente, é máis fácil usar `_()` en lugar de `gettext()`. Moitas bibliotecas i18n personalizadas de
+frameworks usan algo similar a `t()` tamén, para facer o código traducido máis curto. Con todo, esa é a única función
+que ten un atallo. Podes querer engadir no teu proxecto algunhas outras, como `__()` ou `_n()` para `ngettext()`,
+ou quizais un elegante `_r()` que uniría chamadas `gettext()` e `sprintf()`. Outras bibliotecas, como
+[Gettext de php-gettext][php-gettext] tamén proporcionan funcións auxiliares como estas.
 
-In those cases, you'll need to instruct the Gettext utility on how to extract the strings from those new functions.
-Don't be afraid; it is very easy. It is just a field in the `.po` file, or a Settings screen on Poedit. In the editor,
-that option is inside "Catalog > Properties > Source keywords". Remember: Gettext already knows the default functions
-for many languages, so don’t be afraid if that list seems empty. You need to include there the specifications of those
-new functions, following [a specific format][func_format]:
+Neses casos, necesitarás instruír a utilidade Gettext sobre como extraer as cadeas desas novas funcións.
+Non te asustes; é moi fácil. É só un campo no arquivo `.po`, ou unha pantalla de Configuracións en Poedit. No editor,
+esa opción está dentro de "Catalog > Properties > Source keywords". Lembra: Gettext xa sabe as funcións por defecto
+para moitas linguaxes, así que non te asustes se esa lista parece baleira. Necesitas incluír alí as especificacións desas
+novas funcións, seguindo [un formato específico][func_format]:
 
-- if you create something like `t()` that simply returns the translation for a string, you can specify it as `t`.
-Gettext will know the only function argument is the string to be translated;
-- if the function has more than one argument, you can specify in which one the first string is - and if needed, the
-plural form as well. For instance, if we call our function like this: `__('one user', '%d users', $number)`, the
-specification would be `__:1,2`, meaning the first form is the first argument, and the second form is the second
-argument. If your number comes as the first argument instead, the spec would be `__:2,3`, indicating the first form is
-the second argument, and so on.
+- se creas algo como `t()` que simplemente retorna a tradución para unha cadea, podes especificalo como `t`.
+Gettext saberá que o único argumento da función é a cadea a ser traducida;
+- se a función ten máis dun argumento, podes especificar en cal o primeiro está a primeira cadea - e se é necesario, a
+forma plural tamén. Por exemplo, se chamamos a nosa función así: `__('one user', '%d users', $number)`, a
+especificación sería `__:1,2`, significando que a primeira forma é o primeiro argumento, e a segunda forma é o segundo
+argumento. Se o teu número vén como o primeiro argumento en cambio, a especificación sería `__:2,3`, indicando que a primeira forma é
+o segundo argumento, e así por diante.
 
-After including those new rules in the `.po` file, a new scan will bring in your new strings just as easy as before.
+Despois de incluír esas novas regras no arquivo `.po`, unha nova busca traerá as túas novas cadeas tan fácil como antes.
 
-### References
+### Referencias
 
-* [Wikipedia: i18n and l10n](https://en.wikipedia.org/wiki/Internationalization_and_localization)
+* [Wikipedia: i18n e l10n](https://en.wikipedia.org/wiki/Internationalization_and_localization)
 * [Wikipedia: Gettext](https://en.wikipedia.org/wiki/Gettext)
-* [LingoHub: PHP internationalization with gettext tutorial][lingohub]
-* [PHP Manual: Gettext](https://www.php.net/manual/book.gettext.php)
-* [Gettext Manual][manual]
+* [LingoHub: tutorial de internacionalización PHP con gettext][lingohub]
+* [Manual de PHP: Gettext](https://www.php.net/manual/book.gettext.php)
+* [Manual de Gettext][manual]
 
 [Poedit]: https://poedit.net
 [poedit_download]: https://poedit.net/download
