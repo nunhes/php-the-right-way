@@ -2,15 +2,13 @@
 anchor: community
 ---
 
-# Community {#community_title}
+# Comunidade {#community_title}
 
-The PHP community is as diverse as it is large, and its members are ready and willing to support new PHP programmers.
-Consider joining your local PHP user group (PUG) or attending larger PHP conferences to learn more about the best
-practices shown here. You can hang out on IRC in the #phpc channel on [irc.libera.chat][php-irc] and follow the
-@phpc, on [Discord][php-discord], on [X][phpc-x] or [Mastodon][phpc-mastodon]. Get out there, meet new developers, learn new topics, and above all, make new
-friends! Other community resources include [StackOverflow][php-so].
+A comunidade PHP é tan diversa como grande, e os seus membros están preparados e dispostos a apoiar aos novos programadores de PHP.
+Considera unirte ao teu grupo de usuarios de PHP local (PUG) ou asistir a conferencias PHP máis grandes para aprender máis sobre as mellores prácticas que se mostran aquí. Podes pasar o tempo no IRC na canle #phpc en [irc.libera.chat][php-irc] e seguir o
+@phpc, en [Discord][php-discord], en [X][phpc-x] ou en [Mastodon][phpc-mastodon]. Sae á rúa, coñece novos desenvolvedores, aprende novos temas e, sobre todo, crea novos amigos! Outros recursos comunitarios inclúen [StackOverflow][php-so].
 
-[Read the Official PHP Events Calendar][php-calendar]
+[Lee o calendario oficial de eventos PHP][php-calendar]
 
 
 [php-irc]: https://web.libera.chat/#phpc

@@ -1,10 +1,10 @@
 ---
-title: PHP PaaS Providers
+title: Provedores PHP PaaS
 isChild: true
 anchor:  php_paas_providers
 ---
 
-## PHP PaaS Providers {#php_paas_providers_title}
+## Provedores PHP PaaS {#php_paas_providers_title}
 
 * [Amezmo](https://www.amezmo.com)
 * [AWS Elastic Beanstalk](https://aws.amazon.com/elasticbeanstalk/)

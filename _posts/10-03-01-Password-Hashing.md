@@ -37,7 +37,7 @@ Afortunadamente, hoxe en día PHP fai isto fácil.
 **Haxear contrasinais con `password_hash`**
 
 En PHP 5.5 `password_hash()` foi introducido. Neste momento está usando BCrypt, o algoritmo máis forte actualmente
-soportado por PHP. Será actualizado no futuro para soportar máis algoritmos segundo sexa necesario. A biblioteca `password_compat`
+soportado por PHP. Será actualizado no futuro para soportar máis algoritmos segundo sexa necesario. A libraría `password_compat`
 foi creada para proporcionar compatibilidade cara adiante para PHP >= 5.3.7.
 
 Abaixo haxeamos unha cadea, e entón verificamos o hash contra unha nova cadea. Porque as nosas dúas cadeas fonte son diferentes

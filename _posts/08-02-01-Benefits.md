@@ -16,6 +16,6 @@ unha definida dentro dun único arquivo. Este enfoque fomenta a reutilización d
 e reutilizábeis, a miúdo chamadas parciais. Por exemplo, o cabeceira e pé do teu sitio poden ser definidos como plantillas,
 que entón son incluídas antes e despois de cada plantilla de páxina.
 
-Finalmente, dependendo da biblioteca que uses, as plantillas poden ofrecer máis seguridade escapando automaticamente o contido
-xerado polo usuario. Algunhas bibliotecas incluso ofrecen sand-boxing, onde os deseñadores de plantillas só teñen acceso a variables
+Finalmente, dependendo da libraría que uses, as plantillas poden ofrecer máis seguridade escapando automaticamente o contido
+xerado polo usuario. Algunhas librarías incluso ofrecen sand-boxing, onde os deseñadores de plantillas só teñen acceso a variables
 e funcións de lista branca.

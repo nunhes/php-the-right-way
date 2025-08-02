@@ -6,7 +6,7 @@ anchor:  pdo_extension
 
 ## Extensión PDO {#pdo_extension_title}
 
-[PDO] é unha biblioteca de abstracción de conexión a bases de datos &mdash; integrada en PHP desde 5.1.0 &mdash; que proporciona unha interface
+[PDO] é unha libraría de abstracción de conexión a bases de datos &mdash; integrada en PHP desde 5.1.0 &mdash; que proporciona unha interface
 común para falar con moitas bases de datos diferentes. Por exemplo, podes usar código basicamente idéntico para interfacear con
 MySQL ou SQLite:
 

@@ -12,7 +12,7 @@ Por razóns de seguridade, os arquivos de configuración non deberían ser acces
 
 Para cada equipo, CMS, ou framework no que se traballa, cada unha desas entidades usa unha estrutura de directorios estándar. Con todo, se un está a comezar un proxecto só, saber que estrutura de sistema de arquivos usar pode ser desalentador.
 
-[Paul M. Jones] fixo algunha investigación fantástica sobre prácticas comúns de decenas de miles de proxectos de github no ámbito de PHP. Compilou unha estrutura estándar de arquivos e directorios, o [Standard PHP Package Skeleton], baseado nesta investigación. Nesta estrutura de directorios, `DocumentRoot` debería apuntar a `public/`, as probas unitarias deberían estar no directorio `tests/`, e as bibliotecas de terceiros, como as instaladas por [composer], pertencen ao directorio `vendor/`. Para outros arquivos e directorios, seguir o [Standard PHP Package Skeleton] terá máis sentido para os colaboradores dun proxecto.
+[Paul M. Jones] fixo algunha investigación fantástica sobre prácticas comúns de decenas de miles de proxectos de github no ámbito de PHP. Compilou unha estrutura estándar de arquivos e directorios, o [Standard PHP Package Skeleton], baseado nesta investigación. Nesta estrutura de directorios, `DocumentRoot` debería apuntar a `public/`, as probas unitarias deberían estar no directorio `tests/`, e as librarías de terceiros, como as instaladas por [composer], pertencen ao directorio `vendor/`. Para outros arquivos e directorios, seguir o [Standard PHP Package Skeleton] terá máis sentido para os colaboradores dun proxecto.
 
 [Paul M. Jones]: https://paul-m-jones.com/
 [Standard PHP Package Skeleton]: https://github.com/php-pds/skeleton

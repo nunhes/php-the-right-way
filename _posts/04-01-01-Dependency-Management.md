@@ -4,7 +4,7 @@ anchor: dependency_management
 
 # Xestión de Dependencias {#dependency_management_title}
 
-Hai unha tonelada de bibliotecas, frameworks e compoñentes PHP para elixir. O teu proxecto probablemente usará
+Hai unha tonelada de librarías, frameworks e compoñentes PHP para elixir. O teu proxecto probablemente usará
 varios deles — estas son as dependencias do proxecto. PHP non tiña unha boa forma de xestionar
 estas dependencias do proxecto. Mesmo se as xestionabas manualmente, aínda tiñas que preocuparte polos autoloaders.
 Iso xa non é un problema.

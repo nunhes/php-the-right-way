@@ -1,22 +1,20 @@
 ---
 layout: page
-title:  Design Patterns
+title:  Patróns de Deseño
 sitemap: true
 ---
 
-# Design Patterns
+# Patróns de Deseño
 
-There are numerous ways to structure the code and project for your web application, and you can put as much or as little thought as you like into architecting. But it is usually a good idea to follow common patterns because it will
-make your code easier to manage and easier for others to understand.
+Hai numerosas formas de estruturar o código e o proxecto para a túa aplicación web, e podes empregar máis ou menos esforzo na súa arquitectura. Non obstante, adoita ser unha boa idea seguir patróns comúns xa que fan que o teu código sexa máis doado de xestionar e máis sinxelo de entender para outros.
 
-* [Architectural pattern on Wikipedia](https://en.wikipedia.org/wiki/Architectural_pattern)
-* [Software design pattern on Wikipedia](https://en.wikipedia.org/wiki/Software_design_pattern)
-* [Collection of implementation examples](https://designpatternsphp.readthedocs.io/en/latest/)
+* [Patrón arquitectónico en Wikipedia](https://en.wikipedia.org/wiki/Architectural_pattern)
+* [Patrón de deseño de software en Wikipedia](https://en.wikipedia.org/wiki/Software_design_pattern)
+* [Colección de exemplos de implementación](https://designpatternsphp.readthedocs.io/en/latest/)
 
-## Factory
+## Fábrica (Factory)
 
-One of the most commonly used design patterns is the factory pattern. In this pattern, a class simply creates the
-object you want to use. Consider the following example of the factory pattern:
+Un dos patróns de deseño máis empregados é o patrón fábrica. Neste patrón, unha clase simplemente crea o obxecto que desexas usar. Considera o seguinte exemplo do patrón fábrica:
 
 {% highlight php %}
 <?php
@@ -51,58 +49,40 @@ $veyron = AutomobileFactory::create('Bugatti', 'Veyron');
 print_r($veyron->getMakeAndModel()); // outputs "Bugatti Veyron"
 {% endhighlight %}
 
-This code uses a factory to create the Automobile object. There are two possible benefits to building your code this
-way; the first is that if you need to change, rename, or replace the Automobile class later on you can do so and you
-will only have to modify the code in the factory, instead of every place in your project that uses the Automobile class.
-The second possible benefit is that, if creating the object is a complicated job, you can do all of the work in the
-factory instead of repeating it every time you want to create a new instance.
+Este código usa unha fábrica para crear o obxecto Automobile. Hai dous posibles beneficios ao construír o teu código desta forma; o primeiro é que se necesitas cambiar, renomear ou substituír a clase Automobile máis adiante, só terás que modificar o código na fábrica, en vez de en cada lugar do teu proxecto onde se use a clase Automobile. O segundo beneficio posible é que, se crear o obxecto é un traballo complicado, podes facer todo o traballo na fábrica en vez de repetilo cada vez que queiras crear unha nova instancia.
 
-Using the factory pattern isn't always necessary (or wise). The example code used here is so simple that a factory
-would simply be adding unneeded complexity. However if you are making a fairly large or complex project you may save
-yourself a lot of trouble down the road by using factories.
+Usar o patrón fábrica non sempre é necesario (ou sabio). O código de exemplo empregado aquí é tan sinxelo que unha fábrica simplemente estaría engadindo complexidade innecesaria. Non obstante, se estás a facer un proxecto bastante grande ou complexo, podes aforrarte moitos problemas no futuro usando fábricas.
 
-* [Factory pattern on Wikipedia](https://en.wikipedia.org/wiki/Factory_pattern)
+* [Patrón Fábrica en Wikipedia](https://en.wikipedia.org/wiki/Factory_pattern)
 
 ## Singleton
 
-When designing web applications, it often makes sense conceptually and architecturally to allow access to one and only
-one instance of a particular class. The singleton pattern enables us to do this.
+Cando se deseñan aplicacións web, a miúdo ten sentido conceptual e arquitectónicamente permitir o acceso a unha e só unha instancia dunha clase en particular. O patrón singleton permítenos facer isto.
 
-**TODO: NEED NEW SINGLETON CODE EXAMPLE**
+**TODO: NOVO EXEMPLO NECESARIO DE CÓDIGO SINGLETON**
 
-The code above implements the singleton pattern using a [*static* variable](https://www.php.net/language.variables.scope#language.variables.scope.static) and the static creation method `getInstance()`.
-Note the following:
+O código anterior implementa o patrón singleton usando unha variable [*estática*](https://www.php.net/language.variables.scope#language.variables.scope.static) e o método de creación estático `getInstance()`.
+Observa o seguinte:
 
-* The constructor [`__construct()`](https://www.php.net/language.oop5.decon#object.construct) is declared as protected to
-prevent creating a new instance outside of the class via the `new` operator.
-* The magic method [`__clone()`](https://www.php.net/language.oop5.cloning#object.clone) is declared as private to prevent
-cloning of an instance of the class via the [`clone`](https://www.php.net/language.oop5.cloning) operator.
-* The magic method [`__wakeup()`](https://www.php.net/language.oop5.magic#object.wakeup) is declared as private to prevent
-unserializing of an instance of the class via the global function [`unserialize()`](https://www.php.net/function.unserialize)
-.
-* A new instance is created via [late static binding](https://www.php.net/language.oop5.late-static-bindings) in the static
-creation method `getInstance()` with the keyword `static`. This allows the subclassing of the class `Singleton` in the
-example.
+* O construtor [`__construct()`](https://www.php.net/language.oop5.decon#object.construct) está declarado como protexido para
+impedir a creación dunha nova instancia fóra da clase mediante o operador `new`.
+* O método máxico [`__clone()`](https://www.php.net/language.oop5.cloning#object.clone) está declarado como privado para impedir
+que se clone unha instancia da clase mediante o operador [`clone`](https://www.php.net/language.oop5.cloning).
+* O método máxico [`__wakeup()`](https://www.php.net/language.oop5.magic#object.wakeup) está declarado como privado para impedir
+a deserialización dunha instancia da clase mediante a función global [`unserialize()`](https://www.php.net/function.unserialize).
+* Crese unha nova instancia mediante [enlace estático en tempo de execución](https://www.php.net/language.oop5.late-static-bindings) no método de creación estático `getInstance()` coa palabra chave `static`. Isto permite a herdanza da clase `Singleton` no exemplo.
 
-The singleton pattern is useful when we need to make sure we only have a single instance of a class for the entire
-request lifecycle in a web application. This typically occurs when we have global objects (such as a Configuration
-class) or a shared resource (such as an event queue).
+O patrón singleton é útil cando necesitamos asegurarnos de que só temos unha única instancia dunha clase durante todo o ciclo de vida dunha petición nunha aplicación web. Isto ocorre normalmente cando temos obxectos globais (como unha clase de Configuración) ou un recurso compartido (como unha cola de eventos).
 
-You should be wary when using the singleton pattern, as by its very nature it introduces global state into your
-application, reducing testability. In most cases, dependency injection can (and should) be used in place of a singleton
-class. Using dependency injection means that we do not introduce unnecessary coupling into the design of our
-application, as the object using the shared or global resource requires no knowledge of a concretely defined class.
+Debes ter coidado ao usar o patrón singleton, xa que pola súa propia natureza introduce estado global na túa aplicación, reducindo a súa capacidade de proba. Na maioría dos casos, a inxección de dependencias pode (e debería) usarse no canto dunha clase singleton. Usar inxección de dependencias significa que non introducimos acoplamento innecesario no deseño da nosa aplicación, xa que o obxecto que usa o recurso compartido ou global non require coñecemento dunha clase definida concretamente.
 
-* [Singleton pattern on Wikipedia](https://en.wikipedia.org/wiki/Singleton_pattern)
+* [Patrón Singleton en Wikipedia](https://en.wikipedia.org/wiki/Singleton_pattern)
 
-## Strategy
+## Estratexia (Strategy)
 
-With the strategy pattern you encapsulate specific families of algorithms allowing the client class responsible for
-instantiating a particular algorithm to have no knowledge of the actual implementation. There are several variations on
-the strategy pattern, the simplest of which is outlined below:
+Co patrón estratexia encapsulas familias específicas de algoritmos permitindo que a clase cliente responsable de instanciar un algoritmo particular non teña coñecemento da implementación real. Hai varias variacións do patrón estratexia, a máis simple das cales se describe a continuación:
 
-This first code snippet outlines a family of algorithms; you may want a serialized array, some JSON or maybe just an
-array of data:
+Este primeiro fragmento de código describe unha familia de algoritmos; podes querer un array serializado, algún JSON ou simplemente un array de datos:
 
 {% highlight php %}
 <?php
@@ -137,16 +117,11 @@ class ArrayOutput implements OutputInterface
 }
 {% endhighlight %}
 
-By encapsulating the above algorithms you are making it nice and clear in your code that other developers can easily
-add new output types without affecting the client code.
+Ao encapsular os algoritmos anteriores estás facendo que o teu código sexa claro e permitindo que outros desenvolvedores poidan engadir facilmente novos tipos de saída sen afectar o código cliente.
 
-You will see how each concrete 'output' class implements an OutputInterface - this serves two purposes, primarily it
-provides a simple contract which must be obeyed by any new concrete implementations. Secondly by implementing a common
-interface you will see in the next section that you can now utilise [Type Hinting](https://www.php.net/language.oop5.typehinting) to ensure that the client which is utilising these behaviours is of the correct type,
-in this case 'OutputInterface'.
+Verás como cada clase 'output' concreta implementa unha OutputInterface - isto serve para dous propósitos: principalmente proporciona un contrato simple que debe ser cumprido por calquera nova implementación concreta. En segundo lugar, ao implementar unha interface común, verás na seguinte sección que agora podes utilizar [Type Hinting](https://www.php.net/language.oop5.typehinting) para asegurarte de que o cliente que está utilizando estes comportamentos é do tipo correcto, neste caso 'OutputInterface'.
 
-The next snippet of code outlines how a calling client class might use one of these algorithms and even better set the
-behaviour required at runtime:
+O seguinte fragmento de código describe como unha clase cliente que fai a chamada podería usar un destes algoritmos e incluso mellor, establecer o comportamento requirido en tempo de execución:
 
 {% highlight php %}
 <?php
@@ -166,9 +141,8 @@ class SomeClient
 }
 {% endhighlight %}
 
-The calling client class above has a private property which must be set at runtime and be of type 'OutputInterface'.
-Once this property is set a call to loadOutput() will call the load() method in the concrete class of the output type
-that has been set.
+A clase cliente que fai a chamada ten unha propiedade privada que debe ser establecida en tempo de execución e ser do tipo 'OutputInterface'.
+Unha vez que esta propiedade está definida, unha chamada a loadOutput() chamará ao método load() na clase concreta do tipo de saída que se estableceu.
 
 {% highlight php %}
 <?php
@@ -184,28 +158,22 @@ $data = $client->loadOutput();
 
 {% endhighlight %}
 
-* [Strategy pattern on Wikipedia](https://en.wikipedia.org/wiki/Strategy_pattern)
+* [Patrón Estratexia en Wikipedia](https://en.wikipedia.org/wiki/Strategy_pattern)
 
-## Front Controller
+## Controlador Frontal (Front Controller)
 
-The front controller pattern is where you have a single entrance point for your web application (e.g. index.php) that
-handles all of the requests. This code is responsible for loading all of the dependencies, processing the request and
-sending the response to the browser. The front controller pattern can be beneficial because it encourages modular code
-and gives you a central place to hook in code that should be run for every request (such as input sanitization).
+O patrón de controlador frontal é cando tes un único punto de entrada para a túa aplicación web (por exemplo, index.php) que xestiona todas as peticións. Este código é responsable de cargar todas as dependencias, procesar a petición e enviar a resposta ao navegador. O patrón de controlador frontal pode ser beneficioso porque fomenta o código modular e proporciona un lugar central para engadir código que debe executarse para cada petición (como a desinfección de entrada).
 
-* [Front Controller pattern on Wikipedia](https://en.wikipedia.org/wiki/Front_Controller_pattern)
+* [Patrón Controlador Frontal en Wikipedia](https://en.wikipedia.org/wiki/Front_Controller_pattern)
 
-## Model-View-Controller
+## Modelo-Vista-Controlador (MVC)
 
-The model-view-controller (MVC) pattern and its relatives HMVC and MVVM let you break up code into logical objects
-that serve very specific purposes. Models serve as a data access layer where data is fetched and returned in formats
-usable throughout your application. Controllers handle the request, process the data returned from models and load
-views to send in the response. And views are display templates (markup, xml, etc) that are sent in the response to the
-web browser.
+O patrón modelo-vista-controlador (MVC) e os seus parentes HMVC e MVVM permítenche dividir o código en obxectos lóxicos
+que serven a propósitos moi específicos. Os modelos serven como unha capa de acceso a datos onde se obteñen e devolven datos en formatos utilizables en toda a túa aplicación. Os controladores xestionan a petición, procesan os datos devoltos polos modelos e cargan as vistas para envialas na resposta. E as vistas son modelos de visualización (marcado, XML, etc.) que se envían na resposta ao navegador web.
 
-MVC is the most common architectural pattern used in the popular [PHP frameworks](https://github.com/codeguy/php-the-right-way/wiki/Frameworks).
+MVC é o patrón arquitectónico máis común utilizado nos [frameworks PHP](https://github.com/codeguy/php-the-right-way/wiki/Frameworks) máis populares.
 
-Learn more about MVC and its relatives:
+Aprende máis sobre MVC e as súas variantes:
 
 * [MVC](https://en.wikipedia.org/wiki/Model%E2%80%93View%E2%80%93Controller)
 * [HMVC](https://en.wikipedia.org/wiki/Hierarchical_model%E2%80%93view%E2%80%93controller)

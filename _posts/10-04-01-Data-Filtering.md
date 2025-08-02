@@ -43,7 +43,7 @@ Por exemplo, deberías sanitizar a entrada estraña antes de incluír a entrada 
 Cando usas parámetros vinculados con [PDO](#databases), sanitizará a entrada para ti.
 
 Ás veces é requirido permitir algunhas etiquetas HTML seguras na entrada cando a inclúes na páxina HTML. Isto é moi
-difícil de facer e moitos evítano usando outro formato máis restritivo como Markdown ou BBCode, aínda que bibliotecas de lista branca
+difícil de facer e moitos evítano usando outro formato máis restritivo como Markdown ou BBCode, aínda que librarías de lista branca
 como [HTML Purifier][html-purifier] existen por esta razón.
 
 [Ver Filtros de Sanitización][2]

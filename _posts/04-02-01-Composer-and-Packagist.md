@@ -10,8 +10,8 @@ Composer é o xestor de dependencias recomendado para PHP. Lista as dependencias
 con uns poucos comandos simples, Composer descargará automaticamente as dependencias do teu proxecto e configurará o autoloading para
 ti. Composer é análogo a NPM no mundo de node.js, ou Bundler no mundo de Ruby.
 
-Hai unha plethora de bibliotecas PHP que son compatibles con Composer e listas para ser usadas no teu proxecto. Estes
-"paquetes" están listados en [Packagist], o repositorio oficial para bibliotecas PHP compatibles con Composer.
+Hai unha plethora de librarías PHP que son compatibles con Composer e listas para ser usadas no teu proxecto. Estes
+"paquetes" están listados en [Packagist], o repositorio oficial para librarías PHP compatibles con Composer.
 
 ### Como Instalar Composer
 

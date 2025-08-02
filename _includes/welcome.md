@@ -6,7 +6,7 @@ e rápida para os estándares de codificación populares de PHP, enlaces a tutor
 pola Web, e o que os colaboradores consideran as mellores prácticas na actualidade.
 
 _Non hai unha forma canónica de usar PHP_. Este sitio web pretende introducir aos novos desenvolvedores
-de PHP en algúns temas que poden non descubrir ata que sexa demasiado tarde, e pretende
+de PHP nalgúns temas que poden non descubrir ata que sexa demasiado tarde, e pretende
 dar aos profesionais experimentados algunhas ideas frescas sobre aqueles temas que levan anos
 facendo sen reconsiderar nunca. Este sitio web tampouco che dirá que ferramentas usar, senón
 que ofrecerá suxestións para múltiples opcións, cando sexa posible explicando as diferenzas
@@ -47,7 +47,7 @@ A versión máis recente de _PHP: The Right Way_ tamén está dispoñible en for
 
 ## Como Contribuír
 
-¡Axuda a facer deste sitio web o mellor recurso para os novos programadores de PHP! [Contribuír en GitHub][2]
+Axuda a facer deste sitio web o mellor recurso para os novos programadores de PHP! [Contribuír en GitHub][2]
 
 [1]: https://leanpub.com/phptherightway
 [2]: https://github.com/codeguy/php-the-right-way/tree/gh-pages

@@ -1,10 +1,10 @@
 ---
-title:   Xente para Seguir
+title:   Xente para seguir
 isChild: true
 anchor:  people_to_follow
 ---
 
-## Xente para Seguir {#people_to_follow_title}
+## Xente para seguir {#people_to_follow_title}
 
 É difícil atopar membros da comunidade PHP interesantes e coñecedores
 cando estás a comezar. Podes

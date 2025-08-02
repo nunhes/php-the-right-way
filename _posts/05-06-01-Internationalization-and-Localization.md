@@ -36,7 +36,7 @@ coa liña de comandos, presentaremos unha gran aplicación GUI que pode ser usad
 
 ### Outras ferramentas
 
-Hai bibliotecas comúns usadas que soportan Gettext e outras implementacións de i18n. Algunhas delas poden parecer máis fáciles de
+Hai librarías comúns usadas que soportan Gettext e outras implementacións de i18n. Algunhas delas poden parecer máis fáciles de
 instalar ou ter funcionalidades adicionais ou formatos de arquivo i18n. Neste documento, enfocámonos nas ferramentas proporcionadas co
 núcleo de PHP, pero aquí listamos outras para completar:
 
@@ -60,13 +60,13 @@ Outros frameworks tamén inclúen módulos i18n, pero eses non están dispoñíb
 extensión [`Intl`][intl], dispoñíbel desde PHP 5.3, e baseada no [proxecto ICU]; isto permite a Yii executar substitucións poderosas,
 como deletrear números, formatear datas, tempos, intervalos, moeda e ordinais.
 
-Se decides ir por unha das bibliotecas que non proporcionan extractores, podes querer usar os formatos gettext, para que
+Se decides ir por unha das librarías que non proporcionan extractores, podes querer usar os formatos gettext, para que
 podes usar a cadea de ferramentas gettext orixinal (incluíndo Poedit) como descrito no resto do capítulo.
 
 ## Gettext
 
 ### Instalación
-Podes necesitar instalar Gettext e a biblioteca PHP relacionada usando o teu xestor de paquetes, como `apt-get` ou `yum`.
+Podes necesitar instalar Gettext e a libraría PHP relacionada usando o teu xestor de paquetes, como `apt-get` ou `yum`.
 Despois de instalado, habilítao engadindo `extension=gettext.so` (Linux/Unix) ou `extension=php_gettext.dll` (Windows) ao
 teu `php.ini`.
 
@@ -213,7 +213,7 @@ cadea está localizada en lugar do seu contido.
     os tradutores lerían para entender que escribir en `fr.po` por exemplo.
     - as traducións faltantes mostrarían chaves sen significado na pantalla (`top_menu.welcome` en lugar de `Hello there, User!`
     na dita páxina francesa non traducida). Iso é bo xa que forzaría a tradución a ser completa antes de publicar -
-    con todo, malo xa que os problemas de tradución serían notablemente terribles na interface. Algunhas bibliotecas, con todo, inclúen unha
+    con todo, malo xa que os problemas de tradución serían notablemente terribles na interface. Algunhas librarías, con todo, inclúen unha
     opción para especificar unha linguaxe dada como "fallback", tendo un comportamento similar ao outro enfoque.
 
 O [manual de Gettext][manual] favorece o primeiro enfoque xa que, en xeral, é máis fácil para tradutores e usuarios en
@@ -369,10 +369,10 @@ a primeira vez que é lido, e entón, para actualizalo, podes necesitar reinicia
 xeralmente leva só un par de refrescos de páxina para refrescar o caché de tradución, e en PHP7 raramente é necesario.
 
 #### Funcións auxiliares adicionais
-Como preferido por moita xente, é máis fácil usar `_()` en lugar de `gettext()`. Moitas bibliotecas i18n personalizadas de
+Como preferido por moita xente, é máis fácil usar `_()` en lugar de `gettext()`. Moitas librarías i18n personalizadas de
 frameworks usan algo similar a `t()` tamén, para facer o código traducido máis curto. Con todo, esa é a única función
 que ten un atallo. Podes querer engadir no teu proxecto algunhas outras, como `__()` ou `_n()` para `ngettext()`,
-ou quizais un elegante `_r()` que uniría chamadas `gettext()` e `sprintf()`. Outras bibliotecas, como
+ou quizais un elegante `_r()` que uniría chamadas `gettext()` e `sprintf()`. Outras librarías, como
 [Gettext de php-gettext][php-gettext] tamén proporcionan funcións auxiliares como estas.
 
 Neses casos, necesitarás instruír a utilidade Gettext sobre como extraer as cadeas desas novas funcións.

@@ -1,19 +1,17 @@
 ---
 isChild: true
-title:   Abstraction Layers
+title:   Capas de abstracción
 anchor:  databases_abstraction_layers
 ---
 
-## Abstraction Layers {#databases_abstraction_layers_title}
+## Capas de abstracción {#databases_abstraction_layers_title}
 
-Many frameworks provide their own abstraction layer which may or may not sit on top of [PDO][1]. These will often
-emulate features for one database system that is missing from another by wrapping your queries in PHP methods, giving
-you actual database abstraction instead of just the connection abstraction that PDO provides. This will of course add a
-little overhead, but if you are building a portable application that needs to work with MySQL, PostgreSQL and SQLite
-then a little overhead will be worth it for the sake of code cleanliness.
+Moitos marcos de traballo proporcionan a súa propia capa de abstracción que pode ou non estar enriba de [PDO][1]. Estes a miúdo emulan características para un sistema de bases de datos que faltan noutro envolvendo as túas consultas en métodos PHP, dándoche
+unha abstracción real da base de datos en lugar de só a abstracción de conexión que proporciona PDO. Isto, por suposto, engadirá
+un pouco de sobrecarga, pero se estás a crear unha aplicación portátil que necesita funcionar con MySQL, PostgreSQL e SQLite
+entón un pouco de sobrecarga pagará a pena polo ben da limpeza do código.
 
-Some abstraction layers have been built using the [PSR-0][psr0] or [PSR-4][psr4] namespace standards so can be
-installed in any application you like:
+Algunhas capas de abstracción foron construídas usando os estándares de espazo de nomes [PSR-0][psr0] ou [PSR-4][psr4], polo que se poden instalar en calquera aplicación que se desexe:
 
 * [Atlas][5]
 * [Aura SQL][6]

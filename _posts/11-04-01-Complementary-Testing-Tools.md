@@ -5,7 +5,7 @@ anchor:  complementary_testing_tools
 
 ## Ferramentas de Proba Complementarias {#complementary_testing_tools_title}
 
-Ademais dos frameworks individuais de proba e comportamento dirixido, tamén hai un número de frameworks xenéricos e bibliotecas
+Ademais dos frameworks individuais de proba e comportamento dirixido, tamén hai un número de frameworks xenéricos e librarías
 auxiliares útiles para calquera enfoque preferido tomado.
 
 ### Enlaces de Ferramentas
@@ -14,9 +14,9 @@ auxiliares útiles para calquera enfoque preferido tomado.
 * [Mockery] é un Framework de Obxectos Mock que pode ser integrado con [PHPUnit] ou [PHPSpec]
 * [Prophecy] é un framework de mock de obxectos PHP moi opinado pero moi poderoso e flexible. Está integrado con
 [PHPSpec] e pode ser usado con [PHPUnit].
-* [php-mock] é unha biblioteca para axudar a mockear funcións nativas de PHP.
+* [php-mock] é unha libraría para axudar a mockear funcións nativas de PHP.
 * [Infection] é unha implementación PHP de [Proba de Mutación] para axudar a medir a efectividade das túas probas.
-* [PHPUnit Polyfills] é unha biblioteca que permite crear probas compatibles entre versións de PHPUnit cando unha suite de probas necesita executarse contra un rango de versións de PHPUnit.
+* [PHPUnit Polyfills] é unha libraría que permite crear probas compatibles entre versións de PHPUnit cando unha suite de probas necesita executarse contra un rango de versións de PHPUnit.
 
 
 [Selenium]: https://www.selenium.dev/

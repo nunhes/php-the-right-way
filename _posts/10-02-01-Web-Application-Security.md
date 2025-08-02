@@ -17,7 +17,7 @@ en unha mancheada de temas amplos:
    * Validación de entrada.
 3. Ambiente operativo.
    * Versións de PHP.
-   * Bibliotecas de terceiros.
+   * librarías de terceiros.
    * O sistema operativo.
 4. Debilidades de criptografía.
    * [Números aleatorios débiles][6].
