@@ -1,10 +1,10 @@
 ---
-title:   libraría Estándar de PHP
+title:   Libraría Estándar de PHP
 isChild: true
 anchor:  standard_php_library
 ---
 
-## libraría Estándar de PHP {#standard_php_library_title}
+## Libraría Estándar de PHP {#standard_php_library_title}
 
 A libraría Estándar de PHP (SPL) está empaquetada con PHP e proporciona unha colección de clases e interfaces. Está feita
 principalmente de clases de estruturas de datos comúns necesarias (pila, cola, montón, e así por diante), e iteradores que poden atravesar

@@ -1,5 +1,5 @@
 ---
-title: Plain PHP Templates
+title: Modelos PHP sinxelos
 isChild: true
 anchor:  plain_php_templates
 ---

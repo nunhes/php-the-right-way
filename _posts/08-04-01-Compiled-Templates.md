@@ -3,20 +3,18 @@ isChild: true
 anchor:  compiled_templates
 ---
 
-## Compiled Templates {#compiled_templates_title}
+## Modelos Compilados {#compiled_templates_title}
 
-While PHP has evolved into a mature, object oriented language, it [hasn't improved much][article_templating_engines] as
-a templating language. Compiled templates, like [Twig], [Brainy], or [Smarty]*, fill this void by offering a new syntax that has
-been geared specifically to templating. From automatic escaping, to inheritance and simplified control structures,
-compiled templates are designed to be easier to write, cleaner to read and safer to use. Compiled templates can even be
-shared across different languages, [Mustache] being a good example of this. Since these templates must be compiled
-there is a slight performance hit, however this is very minimal when proper caching is used.
+Aínda que PHP evolucionou converténdose nunha linguaxe madura e orientada a obxectos, [non mellorou moito][article_templating_engines] como
+linguaxe de modelado. Os modelos compilados, como [Twig], [Brainy] ou [Smarty]*, cubren esta carencia ofrecendo unha nova sintaxe
+deseñada especificamente para modelado. Desde escape automático, até herdanza e estruturas de control simplificadas,
+os modelos compilados están pensados para ser máis doados de escribir, máis limpos de ler e máis seguros de usar. Estes modelos poden incluso compartirse entre diferentes linguaxes, sendo [Mustache] un bo exemplo disto. Xa que estes modelos deben ser compilados, hai unha lixeira penalización no rendemento, non obstante é mínima cando se usa unha caché axeitada.
 
-**While Smarty offers automatic escaping, this feature is NOT enabled by default.*
+**Aínda que Smarty ofrece escape automático, esta característica NON está activada por defecto.*
 
-### Simple example of a compiled template
+### Exemplo sinxelo dun modelo compilado     
 
-Using the [Twig] library.
+Usando a libraría [Twig].
 
 {% highlight html+jinja %}
 {% raw %}
@@ -29,9 +27,9 @@ Using the [Twig] library.
 {% endraw %}
 {% endhighlight %}
 
-### Example of compiled templates using inheritance
+### Exemplo de modelos compilados mediante herdanza
 
-Using the [Twig] library.
+Usando a libraría [Twig].
 
 {% highlight html+jinja %}
 {% raw %}

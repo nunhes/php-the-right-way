@@ -1,6 +1,6 @@
 ---
 isChild: true
-title:   Interacting with Databases
+title:   Interacción con bases de datos
 anchor:  databases_interacting
 ---
 
