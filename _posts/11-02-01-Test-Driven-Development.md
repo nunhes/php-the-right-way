@@ -63,7 +63,7 @@ reais da aplicación.
 #### Ferramentas de Proba Funcional
 
 * [Codeception](https://codeception.com/) é un framework de probas de stack completo que inclúe ferramentas de proba de aceptación
-* [Cyress](https://www.cypress.io/)
+* [Cypress](https://www.cypress.io/)
 * [Mink](https://mink.behat.org/)
 * [Selenium](https://www.selenium.dev/)
 * [Storyplayer](https://github.com/MeltwaterArchive/storyplayer) é un framework de probas de stack completo que inclúe soporte para crear e destruír ambientes de proba baixo demanda
