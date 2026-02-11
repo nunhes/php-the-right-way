@@ -1,5 +1,5 @@
 baseurl: ""  # Nome do teu repositorio
-url: "https://nunhes.github.io/php-the-right-way"  # Cambia polo teu usuario
+url: "https://nunhes.github.io/php-the-right-way/"  # Cambia polo teu usuario
 highlighter: rouge
 markdown: kramdown
 permalink: date
