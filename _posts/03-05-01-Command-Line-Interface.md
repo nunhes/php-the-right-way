@@ -35,7 +35,7 @@ echo "Hello, $name" . PHP_EOL;
 {% endhighlight %}
 
 PHP configura dúas variables especiais baseadas nos argumentos co que o teu script é executado. [`$argc`][argc] é unha variable enteira
-que contén o *conto* de argumentos e [`$argv`][argv] é unha variable array que contén o *valor* de cada argumento.
+que contén a *conta* de argumentos e [`$argv`][argv] é unha variable array que contén o *valor* de cada argumento.
 O primeiro argumento é sempre o nome do teu arquivo script PHP, neste caso `hello.php`.
 
 A expresión `exit()` é usada cun número non cero para deixar que o shell saiba que o comando fallou. Códigos de saída comúns
