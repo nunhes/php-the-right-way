@@ -10,7 +10,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <base href="{{ site.url }}{{ site.baseurl }}/">
-    
+
     <link rel="icon" href="{{ site.baseurl }}/images/favicon.png" type="image/png" />
     <link rel="stylesheet" href="{{ site.baseurl }}/styles/syntax.css">
     <style>
@@ -530,7 +530,7 @@
         {% assign insideSection = false %}
         {% endif %}
         {% endif %}
-        <li><a href="/#{{ post.anchor }}">{{ post.title }}</a>
+        <li><a href="{{ site.baseurl }}/#{{ post.anchor }}">{{ post.title }}</a>
             {% if post.isChild %}
         </li>
         {% else %}
