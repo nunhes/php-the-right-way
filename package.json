@@ -1,5 +1,6 @@
 {
   "name": "php-the-right-way",
+  "homepage": "https://nunhes.github.io/php-the-right-way"
   "version": "2.0.0",
   "devDependencies": {
     "grunt": "~0.4.5",
