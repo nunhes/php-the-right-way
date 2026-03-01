@@ -126,8 +126,8 @@ $result = $handle->fetchAll(\PDO::FETCH_OBJ);
 function escape_to_html($dirty){
     echo htmlspecialchars($dirty, ENT_QUOTES, 'UTF-8');
 }
-
-header('Content-Type: text/html; charset=UTF-8'); // Desnecessario se o teu default_charset está configurado a utf-8 xa
+// Innecesario se o teu 'default_charset' xa está configurado a utf-8
+header('Content-Type: text/html; charset=UTF-8'); 
 ?><!doctype html>
 <html>
     <head>
@@ -137,7 +137,7 @@ header('Content-Type: text/html; charset=UTF-8'); // Desnecessario se o teu defa
     <body>
         <?php
         foreach($result as $row){
-            escape_to_html($row->Body);  // Isto debería sair correctamente a nosa cadea UTF-8 transformada ao navegador
+            escape_to_html($row->Body);  // Isto debería mostrar correctamente a nosa cadea UTF-8 transformada ao navegador
         }
         ?>
     </body>

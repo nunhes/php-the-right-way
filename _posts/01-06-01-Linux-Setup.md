@@ -11,7 +11,7 @@ A maioría das distribucións GNU/Linux veñen con PHP dispoñible desde os repo
 
 En Ubuntu e distribucións GNU/Linux baseadas en Debian, por exemplo, as mellores alternativas para paquetes nativos son proporcionadas e mantidas por [Ondřej Surý][Ondrej Sury Blog], a través do seu Personal Package Archive (PPA) en Ubuntu e DPA/bikeshed en Debian. Atopa instrucións para cada un destes abaixo.
 
-Para distribucións Ubuntu, o [PPA de Ondřej Surý][Ondrej Sury PPA] proporciona versións soportadas de PHP xunto con moitas extensións PECL. Para engadir este PPA ao teu sistema, executa os seguintes pasos no teu terminal:
+Para distribucións Ubuntu, o [PPA de Ondřej Surý][Ondrej Sury PPA] proporciona versións soportadas de PHP xunto con moitas extensións PECL. Para engadir este PPA ao teu sistema, executa os seguintes pasos na túa terminal:
 
 1. Primeiro, engade o PPA ás fontes de software do teu sistema usando o comando:
 

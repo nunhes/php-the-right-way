@@ -9,7 +9,7 @@ macOS 12 (Monterey) e versións posteriores non veñen con PHP preinstalado. As 
 
 ### Instalar PHP via Homebrew
 
-[Homebrew] é un xestor de paquetes para macOS que che axuda a instalar PHP e varias extensións facilmente. O repositorio principal de Homebrew proporciona "fórmulas" para PHP 8.1, 8.2, 8.3 e 8.4. Instala a versión máis recente con este comando:
+[Homebrew] é un xestor de paquetes para macOS que che axuda a instalar PHP e varias extensións facilmente. O repositorio principal de Homebrew proporciona "fórmulas" para PHP 8.1, 8.2, 8.3, 8.4 and 8.5. Instala a versión máis recente con este comando:
 
 ```
 brew install php
@@ -40,7 +40,7 @@ MacPorts soporta binarios precompilados, polo que non necesitas recompilar cada
 dependencia desde os arquivos tar.gz de código fonte, salva a túa vida se non
 tes ningún paquete instalado no teu sistema.
 
-Neste punto, podes instalar `php54`, `php55`, `php56`, `php70`, `php71`, `php72`, `php73`, `php74`, `php80`, `php81`, `php82` ou `php83` usando o comando `port install`, por exemplo:
+Neste punto, podes instalar `php54`, `php55`, `php56`, `php70`, `php71`, `php72`, `php73`, `php74`, `php80`, `php81`, `php82`, `php83` ou `php84` usando o comando `port install`, por exemplo:
 
     sudo port install php74
     sudo port install php83

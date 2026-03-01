@@ -49,7 +49,7 @@ Xestionar e configurar servidores pode ser unha tarefa desalentadora cando te en
 
 [Puppet] é unha ferramenta que ten a súa propia linguaxe e tipos de arquivo para xestionar servidores e configuracións. Pode ser usado nunha configuración mestre/cliente ou pode ser usado nun modo "sen mestre". No modo mestre/cliente os clientes consultarán o(s) mestre(s) central(es) para nova configuración en intervalos establecidos e actualizaranse se é necesario. No modo sen mestre podes empuxar cambios aos teus nodos.
 
-[Chef] é un poderoso framework de integración de sistemas baseado en Ruby co que podes construír todo o teu ambiente de servidor ou caixas virtuais. Integrase ben con Amazon Web Services a través do seu servizo chamado OpsWorks.
+[Chef] é un poderoso framework de integración de sistemas baseado en Ruby co que podes construír todo teu ambiente de servidor ou caixas virtuais. Integrase ben con Amazon Web Services a través do seu servizo chamado OpsWorks.
 
 #### Lectura adicional:
 

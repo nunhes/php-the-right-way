@@ -40,6 +40,7 @@ _PHP: The Right Way_ está traducido a moitos idiomas diferentes:
 * [日本語](https://ja.phptherightway.com)
 * [简体中文](https://laravel-china.github.io/php-the-right-way/)
 * [繁體中文](https://laravel-taiwan.github.io/php-the-right-way)
+* [Galego](https://nunhes.github.io/php-the-right-way/)
 
 ## Libro
 
