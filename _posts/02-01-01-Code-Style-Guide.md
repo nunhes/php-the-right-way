@@ -1,8 +1,9 @@
 ---
+title: Guía de estilo de código
 anchor: code_style_guide
 ---
 
-# Guía de Estilo de Código {#code_style_guide_title}
+# Guía de estilo de código {#code_style_guide_title}
 
 A comunidade PHP é grande e diversa, composta por innumerables librarías, frameworks e compoñentes. É común que os desenvolvedores de PHP elixan varios destes e os combinen nun único proxecto. É importante que o código PHP adhira (o máis próximo posible) a un estilo de código común para facilitar aos desenvolvedores mesturar e combinar varias librarías para os seus proxectos.
 
