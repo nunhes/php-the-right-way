@@ -43,7 +43,7 @@ $pdo->query("SELECT name FROM users WHERE id = " . $_GET['id']); // <-- NON!
 
 Este é código terrible. Estás inserindo un parámetro de consulta bruto nunha consulta SQL. Isto che levará a ser hackeado nun
 instante, usando unha práctica chamada [SQL Injection]. Só imaxina se un hacker pasa un parámetro `id` inventivo
-chamando unha URL como `http://domain.com/?id=1%3BDELETE+FROM+users`. Isto establecerá a variable `$_GET['id']` a `1;DELETE
+chamando unha URL como `http://domain.com/?id=1%3BDELETE+FROM+users`. Isto establecerá a variable `$_GET['id']` a `1; DELETE
 FROM users` que eliminará todos os teus usuarios! En cambio, deberías sanitizar a entrada do ID usando parámetros vinculados PDO.
 
 {% highlight php %}
@@ -73,4 +73,4 @@ a menos que por suposto esteas usando conexións persistentes.
 
 [pdo]: https://www.php.net/pdo
 [SQL Injection]: https://web.archive.org/web/20210413233627/http://wiki.hashphp.org/Validation
-[Learn about PDO connections]: https://www.php.net/pdo.connections
+[Aprender sobre conexións PDO]: https://www.php.net/pdo.connections
