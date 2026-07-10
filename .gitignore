@@ -6,3 +6,4 @@ vendor
 .sass-cache
 .jekyll-cache
 *.log
+readme_too.md
