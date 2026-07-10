@@ -1,4 +1,5 @@
 ---
+title: Uso da caché
 anchor: caching
 ---
 

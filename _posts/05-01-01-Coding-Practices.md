@@ -1,4 +1,5 @@
 ---
+title: Prácticas de codificación
 anchor: coding_practices
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: Lecturas adicionais
 isChild: true
 anchor:  templating_further_reading
 ---

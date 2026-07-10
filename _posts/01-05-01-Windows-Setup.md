@@ -1,4 +1,5 @@
 ---
+title: Configurar en Windows
 isChild: true
 anchor:  windows_setup
 ---

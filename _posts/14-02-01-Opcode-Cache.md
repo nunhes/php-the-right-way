@@ -1,4 +1,5 @@
 ---
+title: Caché de Opcodes
 isChild: true
 anchor:  opcode_cache
 ---

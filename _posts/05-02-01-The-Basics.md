@@ -1,4 +1,5 @@
 ---
+title: Os básicos
 isChild: true
 anchor:  the_basics
 ---

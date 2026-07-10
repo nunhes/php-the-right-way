@@ -1,4 +1,5 @@
 ---
+title: Patróns de deseño
 isChild: true
 anchor:  design_patterns
 ---

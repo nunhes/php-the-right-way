@@ -1,4 +1,5 @@
 ---
+title: Configurar en Linux
 isChild: true
 anchor:  linux_setup
 ---

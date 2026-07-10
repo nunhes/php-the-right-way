@@ -1,4 +1,5 @@
 ---
+title: Hashing de Contrasinais
 isChild: true
 anchor:  password_hashing
 ---
